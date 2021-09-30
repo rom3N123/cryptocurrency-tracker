@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import { coins, fetchStatus } from "./slices";
+import { coins, fetchStatus, pagination } from "./slices";
 
 const store = configureStore({
-   reducer: { coins, fetchStatus },
+   reducer: { coins, fetchStatus, pagination },
 });
 
 export default store;
