@@ -5,3 +5,4 @@ export { default as IconButton } from "./Buttons/IconButton/IconButton";
 export { default as CoinsList } from "./CoinsList/CoinsList";
 export { default as SearchParams } from "./SearchParams/SearchParams";
 export { default as CoinsCatalog } from "./CoinsCatalog/CoinsCatalog";
+export { default as Label } from "./FormControl/Label/Label";
