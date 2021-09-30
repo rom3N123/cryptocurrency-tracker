@@ -7,9 +7,13 @@ import store from "./redux/store";
 import "normalize.css";
 import "./styles/index.scss";
 
+import { BrowserRouter as Router } from "react-router-dom";
+
 ReactDOM.render(
-   <Provider store={store}>
-      <App />
-   </Provider>,
+   <Router>
+      <Provider store={store}>
+         <App />
+      </Provider>
+   </Router>,
    document.getElementById("root")
 );
