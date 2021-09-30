@@ -1,12 +1,12 @@
 import React from "react";
-import { CoinsList, Header } from "components";
+import { CoinsCatalog, Header } from "components";
 
 function Home() {
    return (
       <section>
          <Header />
 
-         <CoinsList />
+         <CoinsCatalog />
       </section>
    );
 }
