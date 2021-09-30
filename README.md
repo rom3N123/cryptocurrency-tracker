@@ -8,6 +8,5 @@
 ### Stack
 
 1. React.js
-2. Redux
-3. SCSS
-4. CoinGecko crypto API
+2. SCSS
+3. CoinGecko crypto API
