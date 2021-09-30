@@ -9,10 +9,15 @@ import "./styles/index.scss";
 
 import { BrowserRouter as Router } from "react-router-dom";
 
+import { ThemeProvider } from "@material-ui/core";
+import MuiTheme from "styles/material/MuiTheme";
+
 ReactDOM.render(
    <Router>
       <Provider store={store}>
-         <App />
+         <ThemeProvider theme={MuiTheme}>
+            <App />
+         </ThemeProvider>
       </Provider>
    </Router>,
    document.getElementById("root")
