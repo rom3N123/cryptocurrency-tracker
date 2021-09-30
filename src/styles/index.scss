@@ -1,5 +1,4 @@
 @import "./variables.scss";
-@import "global";
 
 body {
    font-family: Roboto, sans-serif;
@@ -29,4 +28,10 @@ button {
 
 a {
    text-decoration: none;
+}
+
+.container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 15px;
 }
