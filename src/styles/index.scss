@@ -7,3 +7,26 @@ body {
    color: $primary;
    background-color: $white;
 }
+
+*,
+*::after,
+*::before {
+   box-sizing: border-box;
+}
+
+ul {
+   padding: 0;
+}
+
+input,
+button {
+   border: none;
+}
+
+button {
+   cursor: pointer;
+}
+
+a {
+   text-decoration: none;
+}
