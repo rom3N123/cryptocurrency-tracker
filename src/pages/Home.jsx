@@ -1,5 +1,6 @@
 import React from "react";
 import { CoinsCatalog, Header } from "components";
+import Button from "components/Buttons/Button/Button";
 
 function Home() {
    return (
@@ -8,7 +9,7 @@ function Home() {
 
          <CoinsCatalog />
 
-         <button className="button">Filters</button>
+         <Button label="Filters" />
       </section>
    );
 }

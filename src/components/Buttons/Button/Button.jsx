@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 import "./Button.scss";
 
-function Button({ className, icon = null, label }) {
+function Button({ className = "", icon = null, label }) {
    return (
       <button
          className={classNames(`button ${className}`, {
