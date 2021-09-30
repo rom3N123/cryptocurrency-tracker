@@ -7,3 +7,4 @@ export { default as CoinsCatalog } from "./CoinsCatalog/CoinsCatalog";
 export { default as Label } from "./FormControl/Label/Label";
 export { default as Button } from "./Buttons/Button/Button";
 export { default as SearchButton } from "./Buttons/SearchButton/SearchButton";
+export { default as Logo } from "./Logo/Logo";
