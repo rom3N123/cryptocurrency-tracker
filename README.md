@@ -4,9 +4,3 @@
 
 1. View any cryptocurrency
 2. View its history of price and statistics
-
-### Stack
-
-1. React.js
-2. SCSS
-3. CoinGecko crypto API
