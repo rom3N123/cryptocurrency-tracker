@@ -3,16 +3,16 @@ import classNames from "classnames";
 
 import "./Button.scss";
 
-function Button({ className = "", icon = null, label }) {
+function Button({ className = "", IconComponent = null, label }) {
    return (
       <button
          className={classNames(`button ${className}`, {
-            "with-content": icon,
+            "with-content": IconComponent,
          })}
       >
-         {icon ? (
+         {IconComponent ? (
             <div className="button__content">
-               <span>{icon}</span>
+               <IconComponent />
                <span>{label}</span>
             </div>
          ) : (

@@ -21,6 +21,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 8px 16px 8px 10px;
+
+      svg {
+         width: 18px;
+         height: 18px;
+         fill: colors.$white;
+      }
    }
 
    &__content {

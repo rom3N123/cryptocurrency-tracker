@@ -1,6 +1,7 @@
 import React from "react";
-import { CoinsCatalog, Header } from "components";
-import Button from "components/Buttons/Button/Button";
+import { CoinsCatalog, Header, Button } from "components";
+
+import { ReactComponent as FilterSVG } from "../assets/images/filter.svg";
 
 function Home() {
    return (
@@ -9,7 +10,7 @@ function Home() {
 
          <CoinsCatalog />
 
-         <Button label="Filters" />
+         <Button IconComponent={FilterSVG} label="Filters" />
       </section>
    );
 }
