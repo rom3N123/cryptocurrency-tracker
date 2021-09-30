@@ -3,7 +3,7 @@ import axios from "axios";
 const API_KEY = "5ddaf7d2-6236-4c37-af46-47b9c59865b4";
 
 const $api = axios.create({
-   baseURL: "https://pro-api.coinmarketcap.com/v1/",
+   baseURL: "https://api.coingecko.com/api/v3/",
 });
 
 $api.interceptors.request.use((config) => {
