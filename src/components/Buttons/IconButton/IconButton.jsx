@@ -2,9 +2,13 @@ import React from "react";
 
 import "./IconButton.scss";
 
-function IconButton({ children, ...props }) {
+function IconButton({ children, onClick, className, ...props }) {
    return (
-      <button className="icon-button" {...props}>
+      <button
+         onClick={onClick}
+         className={`icon-button ${className ?? ""}`}
+         {...props}
+      >
          {children}
       </button>
    );

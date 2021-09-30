@@ -9,6 +9,10 @@ function Searchbar() {
       searchValue: "",
    });
 
+   const handleSearch = () => {
+      alert("hi");
+   };
+
    const handleValueChange = (e) => {
       setSearchbarState((prev) => ({ ...prev, searchValue: e.target.value }));
    };
@@ -22,7 +26,11 @@ function Searchbar() {
                value={searchbarState.searchValue}
             />
 
-            <IconButton>
+            <IconButton
+               type="submit"
+               className="searchbar__button"
+               onClick={handleSearch}
+            >
                <SearchSvgIcon />
             </IconButton>
          </div>
