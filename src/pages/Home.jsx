@@ -1,7 +1,14 @@
 import React from "react";
+import { CoinsList, Header } from "components";
 
 function Home() {
-   return <div></div>;
+   return (
+      <section>
+         <Header />
+
+         <CoinsList />
+      </section>
+   );
 }
 
 export default Home;
