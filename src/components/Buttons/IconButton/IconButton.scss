@@ -1,0 +1,27 @@
+@use "/src/styles/variables/colors" as colors;
+
+.icon-button {
+   width: 36px;
+   height: 36px;
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   transition: all 0.2s ease;
+
+   svg {
+      fill: colors.$grey;
+   }
+
+   &:active {
+      svg {
+         fill: colors.$white;
+      }
+
+      background-color: colors.$grey;
+   }
+
+   &:hover {
+      background-color: colors.$dark-blue-75;
+   }
+}

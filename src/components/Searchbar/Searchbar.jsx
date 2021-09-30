@@ -1,6 +1,8 @@
-import { Input } from "components";
+import { IconButton, Input } from "components";
 import React from "react";
 import "./Searchbar.scss";
+
+import { ReactComponent as SearchSvgIcon } from "../../assets/images/search-icon.svg";
 
 function Searchbar() {
    const [searchbarState, setSearchbarState] = React.useState({
@@ -13,11 +15,17 @@ function Searchbar() {
 
    return (
       <form className="searchbar">
-         <Input
-            onChange={handleValueChange}
-            placeholder="Search.."
-            value={searchbarState.searchValue}
-         />
+         <div className="searchbar__input-wrapper">
+            <Input
+               onChange={handleValueChange}
+               placeholder="Search.."
+               value={searchbarState.searchValue}
+            />
+
+            <IconButton>
+               <SearchSvgIcon />
+            </IconButton>
+         </div>
       </form>
    );
 }

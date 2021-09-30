@@ -1,2 +1,12 @@
 .searchbar {
+   &__input-wrapper {
+      position: relative;
+   }
+
+   &__search-icon {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+   }
 }
