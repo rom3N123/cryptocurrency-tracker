@@ -4,3 +4,4 @@ export { default as Header } from "./Header/Header";
 export { default as IconButton } from "./Buttons/IconButton/IconButton";
 export { default as CoinsList } from "./CoinsList/CoinsList";
 export { default as SearchParams } from "./SearchParams/SearchParams";
+export { default as CoinsCatalog } from "./CoinsCatalog/CoinsCatalog";
