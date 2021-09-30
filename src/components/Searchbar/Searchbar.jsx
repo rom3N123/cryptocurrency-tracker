@@ -1,8 +1,8 @@
 import React from "react";
-import "Searchbar.scss";
+import "./Searchbar.scss";
 
 function Searchbar() {
-   return <div></div>;
+   return <div>Searchbar</div>;
 }
 
 export default Searchbar;
