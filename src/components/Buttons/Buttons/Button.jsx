@@ -1,6 +1,8 @@
 import React from "react";
 import classNames from "classnames";
 
+import "./Button.scss";
+
 function Button({ className, icon = null, label }) {
    return (
       <button

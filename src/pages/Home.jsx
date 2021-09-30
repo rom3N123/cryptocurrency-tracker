@@ -7,6 +7,8 @@ function Home() {
          <Header />
 
          <CoinsCatalog />
+
+         <button className="button">Filters</button>
       </section>
    );
 }
