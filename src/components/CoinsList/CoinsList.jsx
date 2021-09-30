@@ -1,9 +1,18 @@
 import React from "react";
+import { useApi } from "hooks";
 
 import "./CoinsList.scss";
 
 function CoinsList() {
-   return <ul className="coin-list"></ul>;
+   const { fetchCoins } = useApi();
+
+   return (
+      <ul className="coin-list">
+         <button style={{ color: "#fff" }} onClick={fetchCoins}>
+            FETCH COINS
+         </button>
+      </ul>
+   );
 }
 
 export default CoinsList;
