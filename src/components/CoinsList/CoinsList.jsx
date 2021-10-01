@@ -1,17 +1,25 @@
 import React from "react";
 import { useApi } from "hooks";
+import { DataGrid } from "@mui/x-data-grid";
 
 import "./CoinsList.scss";
 
 function CoinsList() {
    const { fetchCoins } = useApi();
 
+   const rows = [];
+
+   const columns = [
+      {
+         field: "id",
+         headerName: "ID",
+      },
+   ];
+
    return (
-      <ul className="coin-list">
-         <button style={{ color: "#fff" }} onClick={fetchCoins}>
-            FETCH COINS
-         </button>
-      </ul>
+      <div className="container">
+         <DataGrid rows={rows} columns={columns} />
+      </div>
    );
 }
 
