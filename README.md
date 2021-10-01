@@ -12,5 +12,7 @@
 5. Material UI
 6. Axios
 7. Coin Gecko API
+8. Classnames
+9. React router dom
 
 
