@@ -7,3 +7,4 @@ export { default as Label } from "./FormControl/Label/Label";
 export { default as SearchButton } from "./Buttons/SearchButton/SearchButton";
 export { default as Logo } from "./Logo/Logo";
 export { default as Navigation } from "./Navigation/Navigation";
+export { default as SelectRows } from "./SelectRows/SelectRows";
