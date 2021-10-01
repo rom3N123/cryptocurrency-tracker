@@ -42,6 +42,10 @@ const useApi = () => {
       dispatch(SET_TOTAL(response.data.length));
    };
 
+   const fetchCoinViewData = async (id) => {
+      const response = await $api.get("coins/" + id);
+   };
+
    return { fetchCoins, fetchCoinsList };
 };
 
