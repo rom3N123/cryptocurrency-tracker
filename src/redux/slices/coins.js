@@ -1,7 +1,7 @@
 const { createSlice } = require("@reduxjs/toolkit");
 
 const initialState = {
-   coins: null,
+   items: null,
 };
 
 const coinsSlice = createSlice({
@@ -10,7 +10,7 @@ const coinsSlice = createSlice({
    reducers: {
       SET_COINS: (state, action) => ({
          ...state,
-         coins: action.payload,
+         items: action.payload,
       }),
    },
 });

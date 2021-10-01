@@ -37,16 +37,46 @@
       transition: all 0.2s ease;
 
       &:hover {
-         background-color: rgba(colors.$primary-light, 0.2);
+         background-color: rgba(colors.$primary-light, 0.08);
       }
 
       td {
          padding: 20px 0;
-
-         &.price,
-         &.percentage-profit {
-            text-align: center;
-         }
       }
+   }
+
+   &__coin-item-price,
+   &__coin-item-percentage {
+      text-align: center;
+   }
+
+   &__coin-price {
+      &.positive {
+         color: colors.$green;
+      }
+      &.negative {
+         color: colors.$red;
+      }
+   }
+
+   &__coin-name-wrapper {
+      display: flex;
+      align-items: center;
+
+      .coins-table__coin-name {
+         margin: 0 10px 0 5px;
+         font-size: 18px;
+         font-weight: 500;
+         cursor: pointer;
+      }
+
+      .coins-table__coin-symbol {
+         text-transform: uppercase;
+      }
+   }
+
+   &__coin-image {
+      width: 24px;
+      height: 24px;
    }
 }

@@ -2,18 +2,24 @@ import React from "react";
 import { useApi } from "hooks";
 
 import "./CoinsList.scss";
+import { useSelector } from "react-redux";
+import classNames from "classnames";
 
 function CoinsList() {
    const { fetchCoins } = useApi();
+   const coins = useSelector((state) => state.coins);
 
-   const coins = [
-      {
-         name: "Bitcoin",
-         price: "100000 USD",
-         "24h%": { value: "10%", className: "percentage-profit" },
-         "7d%": { value: "2000%", className: "percentage-profit" },
-      },
-   ];
+   React.useEffect(() => {
+      const fetch = async () => {
+         const data = await fetchCoins();
+
+         console.log(data);
+      };
+
+      fetch();
+   }, []);
+
+   const getPrice = (price) => price.toFixed(2);
 
    return (
       <div className="container">
@@ -28,20 +34,45 @@ function CoinsList() {
                <th>
                   <span className="coins-table__title">24h %</span>
                </th>
-               <th>
-                  <span className="coins-table__title">7d %</span>
-               </th>
             </tr>
 
-            {coins.map((coin) => (
-               <tr className="coins-table__coin-item">
-                  {Object.entries(coin).map(([key, value]) => (
-                     <td className={coin[key]?.className || key} key={key}>
-                        {coin[key]?.value || value}
+            {coins.items &&
+               coins.items.map((coin) => (
+                  <tr className="coins-table__coin-item">
+                     <td>
+                        <div className="coins-table__coin-name-wrapper">
+                           <img
+                              className="coins-table__coin-image"
+                              src={coin.image}
+                              alt={"See cryptocurrency logo"}
+                           />
+                           <p className="coins-table__coin-name">{coin.name}</p>
+                           <span className="coins-table__coin-symbol">
+                              {coin.symbol}
+                           </span>
+                        </div>
                      </td>
-                  ))}
-               </tr>
-            ))}
+
+                     <td className="coins-table__coin-item-price">
+                        <span className="coins-table__coin-price">
+                           {coin.current_price} $
+                        </span>
+                     </td>
+
+                     <td className="coins-table__coin-item-percentage">
+                        <span
+                           className={classNames("coins-table__coin-price", {
+                              positive:
+                                 coin.market_cap_change_percentage_24h > 0,
+                              negative:
+                                 coin.market_cap_change_percentage_24h < 0,
+                           })}
+                        >
+                           {getPrice(coin.market_cap_change_percentage_24h)} %
+                        </span>
+                     </td>
+                  </tr>
+               ))}
          </table>
       </div>
    );
