@@ -1,0 +1,25 @@
+.coin-item-name {
+   display: flex;
+
+   &__inner {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      align-self: flex-start;
+   }
+
+   &__image {
+      width: 28px;
+      height: 28px;
+   }
+
+   &__name {
+      margin: 0 10px;
+      font-size: 18px;
+      font-weight: 500;
+   }
+
+   &__symbol {
+      text-transform: uppercase;
+   }
+}

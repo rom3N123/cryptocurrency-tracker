@@ -1,7 +1,8 @@
 const { createSlice } = require("@reduxjs/toolkit");
 
 const initialState = {
-   coins: null,
+   items: null,
+   total: null,
 };
 
 const coinsSlice = createSlice({
@@ -10,11 +11,16 @@ const coinsSlice = createSlice({
    reducers: {
       SET_COINS: (state, action) => ({
          ...state,
-         coins: action.payload,
+         items: action.payload,
+      }),
+
+      SET_TOTAL: (state, action) => ({
+         ...state,
+         total: action.payload,
       }),
    },
 });
 
-export const { SET_COINS } = coinsSlice.actions;
+export const { SET_COINS, SET_TOTAL } = coinsSlice.actions;
 
 export default coinsSlice.reducer;

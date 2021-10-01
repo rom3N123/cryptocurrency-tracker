@@ -1,10 +1,14 @@
-export { default as Input } from "./FormControl/Input/Input";
 export { default as Header } from "./Header/Header";
 export { default as CoinsList } from "./CoinsList/CoinsList";
 export { default as SearchParams } from "./SearchParams/SearchParams";
 export { default as CoinsCatalog } from "./CoinsCatalog/CoinsCatalog";
-export { default as Label } from "./FormControl/Label/Label";
-export { default as Button } from "./Buttons/Button/Button";
 export { default as SearchButton } from "./Buttons/SearchButton/SearchButton";
 export { default as Logo } from "./Logo/Logo";
 export { default as Navigation } from "./Navigation/Navigation";
+export { default as SelectRows } from "./FormControl/SelectRows/SelectRows";
+export { default as SelectCategories } from "./FormControl/SelectCategories/SelectCategories";
+export { default as CoinitemPrice } from "./CoinItem/CoinItemProfit/CoinItemProfit";
+export { default as CoinItemName } from "./CoinItem/CoinItemName/CoinItemName";
+export { default as CoinItemProfit } from "./CoinItem/CoinItemProfit/CoinItemProfit";
+export { default as Pagination } from "./Pagination/Pagination";
+export { default as CoinMarketInfo } from "./CoinMarketInfo/CoinMarketInfo";

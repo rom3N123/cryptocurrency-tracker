@@ -1,13 +1,14 @@
 .header {
    background-image: url("../../assets/images/waves.svg");
    background-size: cover;
-   background-position: center;
+   background-position: center 80%;
    background-repeat: no-repeat;
    background-color: #fff;
-   height: 300px;
+   height: 200px;
 
    &__inner {
       display: flex;
       align-items: center;
+      gap: 30px;
    }
 }

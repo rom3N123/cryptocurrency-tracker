@@ -1,5 +1,74 @@
-.coin-list {
-   display: flex;
-   flex-direction: column;
-   gap: 10px;
+@use "/src/styles/variables/colors" as colors;
+
+.coins-table {
+   width: 100%;
+   border-collapse: collapse;
+
+   &__title-row {
+      th {
+         padding: 20px 0;
+      }
+
+      border-bottom: 1px solid colors.$primary-light;
+   }
+
+   &__title-name {
+      text-align: left;
+   }
+
+   th {
+      &.align-left {
+         text-align: left;
+      }
+   }
+
+   .market-place {
+      width: 5%;
+      text-align: center;
+   }
+
+   tr {
+      td,
+      th {
+         padding-right: 15px;
+         padding-left: 15px;
+      }
+   }
+
+   &__title {
+      color: colors.$primary-main;
+      cursor: pointer;
+   }
+
+   &__coin-item {
+      transition: all 0.2s ease;
+      border-bottom: 1px solid colors.$primary-light;
+
+      &:hover {
+         background-color: rgba(colors.$primary-light, 0.08);
+      }
+
+      td {
+         padding: 20px 0;
+      }
+   }
+
+   &__coin-item-price,
+   &__coin-item-percentage {
+      text-align: center;
+   }
+
+   &__coin-price {
+      &.positive {
+         color: colors.$green;
+      }
+      &.negative {
+         color: colors.$red;
+      }
+   }
+
+   &__coin-image {
+      width: 24px;
+      height: 24px;
+   }
 }
