@@ -6,7 +6,7 @@
 
    &__title-row {
       th {
-         padding: 10px 0;
+         padding: 20px 0;
       }
 
       border-bottom: 1px solid colors.$primary-light;
@@ -16,8 +16,15 @@
       text-align: left;
    }
 
-   th.align-left {
-      text-align: left;
+   th {
+      &.align-left {
+         text-align: left;
+      }
+   }
+
+   .market-place {
+      width: 5%;
+      text-align: center;
    }
 
    tr {
@@ -38,6 +45,10 @@
 
       &:hover {
          background-color: rgba(colors.$primary-light, 0.08);
+      }
+
+      &:not(:last-child) {
+         border-bottom: 1px solid colors.$primary-light;
       }
 
       td {

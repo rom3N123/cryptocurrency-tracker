@@ -1,7 +1,12 @@
 .coin-item-name {
    display: flex;
-   align-items: center;
-   cursor: pointer;
+
+   &__inner {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      align-self: flex-start;
+   }
 
    &__image {
       width: 28px;

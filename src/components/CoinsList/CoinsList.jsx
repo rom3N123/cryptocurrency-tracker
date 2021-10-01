@@ -26,6 +26,9 @@ function CoinsList() {
       <div className="container">
          <table className="coins-table">
             <tr className="coins-table__title-row">
+               <th className="market-place">
+                  <span className="coins-table__title">#</span>
+               </th>
                <th className="align-left">
                   <span className="coins-table__title">Name</span>
                </th>
@@ -40,6 +43,8 @@ function CoinsList() {
             {coins.items &&
                coins.items.map((coin) => (
                   <tr className="coins-table__coin-item">
+                     <td className="market-place">{coin.market_cap_rank}</td>
+
                      <td>
                         <CoinItemName
                            image={coin.image}
