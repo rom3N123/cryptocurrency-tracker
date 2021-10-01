@@ -51,8 +51,10 @@ function CoinsList() {
                </th>
             </tr>
 
-            <SkeletonCoinsList />
-            {/* {state.coins.items &&
+            {state.fetchStatus.coins ? (
+               <SkeletonCoinsList />
+            ) : (
+               state.coins.items &&
                state.coins.items.map((coin) => (
                   <tr className="coins-table__coin-item">
                      <td className="market-place">{coin.market_cap_rank}</td>
@@ -80,7 +82,8 @@ function CoinsList() {
                         />
                      </td>
                   </tr>
-               ))} */}
+               ))
+            )}
          </table>
       </div>
    );
