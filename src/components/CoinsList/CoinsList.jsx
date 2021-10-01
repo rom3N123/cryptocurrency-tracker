@@ -59,7 +59,9 @@ function CoinsList() {
 
                      <td className="coins-table__coin-item-price">
                         <span className="coins-table__coin-price">
-                           {coin.current_price} $
+                           {coin.current_price
+                              ? `${coin.current_price} %`
+                              : "0"}
                         </span>
                      </td>
 
