@@ -4,11 +4,11 @@ import { useSelector } from "react-redux";
 
 import "./CoinDetailName.scss";
 
-function CoinDetailName() {
+function CoinDetailName({ className = "" }) {
    const coin = useSelector((state) => state.coinDetailPage.info);
 
    return (
-      <div className="coin-market-info">
+      <div className={`coin-market-info ${className}`}>
          <img
             src={coin.image.small}
             alt=""
