@@ -6,7 +6,7 @@ import { Fade } from "@material-ui/core";
 
 function CoinsCatalog() {
    return (
-      <Fade in={true} timeout={1000}>
+      <Fade in={true}>
          <div className="coins-catalog">
             <SearchParams />
 

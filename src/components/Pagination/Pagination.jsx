@@ -2,15 +2,16 @@ import React from "react";
 
 import { Pagination as MuiPagination } from "@material-ui/core";
 import { useSelector } from "react-redux";
-import { useSearchParams } from "hooks";
+import { useHistory } from "react-router";
 
 function Pagination() {
    const state = useSelector((state) => state);
-   const { setPage } = useSearchParams();
+
+   const history = useHistory();
 
    const [pages, setPages] = React.useState(null);
 
-   const handleChange = (e, value) => setPage(value);
+   const handleChange = (e, value) => history.push("/?page=" + value);
 
    React.useEffect(() => {
       const calculateTotalPages = () => {
