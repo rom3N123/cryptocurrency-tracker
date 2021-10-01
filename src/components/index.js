@@ -15,3 +15,4 @@ export { default as CoinDetailName } from "./CoinDetailName/CoinDetailName";
 export { default as SkeletonCoinsList } from "./Skeleton/SkeletonCoinsList/SkeletonCoinsList";
 export { default as InformationBox } from "./InformationBox/InformationBox";
 export { default as CoinStats } from "./CoinStats/CoinStats";
+export { default as CoinDetailPageHeader } from "./CoinDetailPageHeader/CoinDetailPageHeader";
