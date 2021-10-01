@@ -3,5 +3,9 @@
 .information-box {
    border-radius: 6px;
    background-color: colors.$primary-dark;
-   color: colors.$grey;
+   color: #fff;
+   text-align: center;
+   line-height: 1.5;
+   font-size: 15px;
+   padding: 2px 6px;
 }
