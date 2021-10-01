@@ -3,7 +3,7 @@ import React from "react";
 import "./CoinItem.scss";
 
 function CoinItem() {
-   return <div className="coin-item"></div>;
+   return <tr className="coin-item"></tr>;
 }
 
 export default CoinItem;
