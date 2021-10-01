@@ -1,0 +1,10 @@
+@use "/src/styles/variables/colors" as colors;
+
+.coin-item-price {
+   display: flex;
+   color: colors.$green;
+
+   &.negative {
+      color: colors.$red;
+   }
+}

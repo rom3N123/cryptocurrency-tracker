@@ -4,6 +4,7 @@ import { useApi } from "hooks";
 import "./CoinsList.scss";
 import { useSelector } from "react-redux";
 import classNames from "classnames";
+import CoinItemPrice from "components/CoinItem/CoinItemPrice/CoinItemPrice";
 
 function CoinsList() {
    const { fetchCoins } = useApi();
@@ -60,16 +61,9 @@ function CoinsList() {
                      </td>
 
                      <td className="coins-table__coin-item-percentage">
-                        <span
-                           className={classNames("coins-table__coin-price", {
-                              positive:
-                                 coin.market_cap_change_percentage_24h > 0,
-                              negative:
-                                 coin.market_cap_change_percentage_24h < 0,
-                           })}
-                        >
-                           {getPrice(coin.market_cap_change_percentage_24h)} %
-                        </span>
+                        <CoinItemPrice
+                           value={coin.price_change_percentage_24h}
+                        />
                      </td>
                   </tr>
                ))}
