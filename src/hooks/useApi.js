@@ -44,10 +44,9 @@ const useApi = () => {
    };
 
    const fetchCoinInfo = useAsync(async (id) => {
-      alert(id);
-      // const response = await $api.get("coins/" + id);
+      const response = await $api.get("coins/" + id);
 
-      // dispatch(SET_COIN_INFO(response.data));
+      dispatch(SET_COIN_INFO(response.data));
    }, "coinInfo");
 
    return { fetchCoins, fetchCoinsList, fetchCoinInfo };
