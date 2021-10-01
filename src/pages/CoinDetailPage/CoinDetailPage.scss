@@ -1,4 +1,21 @@
 .coin-detail-page {
-   &__inner {
+   &__coin-info {
+   }
+
+   &__short-overview {
+      display: flex;
+      flex-direction: column;
+   }
+
+   &__coin-info-top,
+   &__coin-info-bottom {
+      display: flex;
+      justify-content: space-between;
+   }
+
+   &__coin-info-top {
+   }
+
+   &__coin-info-bottom {
    }
 }
