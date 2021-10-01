@@ -2,6 +2,7 @@ import $api from "http/axios";
 import { useAsync, useQuery } from "hooks";
 import { useDispatch, useSelector } from "react-redux";
 import { SET_COINS, SET_TOTAL } from "redux/slices/coins";
+import { SET_COIN_INFO } from "redux/slices/coinDetailPage";
 
 const useApi = () => {
    let query = useQuery();
@@ -29,7 +30,7 @@ const useApi = () => {
    };
 
    const fetchCoins = useAsync(async () => {
-      const getParams = buildGetParams();
+      let getParams = buildGetParams();
 
       const response = await $api.get("coins/markets?" + getParams);
 
@@ -42,11 +43,14 @@ const useApi = () => {
       dispatch(SET_TOTAL(response.data.length));
    };
 
-   const fetchCoinViewData = async (id) => {
-      const response = await $api.get("coins/" + id);
-   };
+   const fetchCoinInfo = useAsync(async (id) => {
+      alert(id);
+      // const response = await $api.get("coins/" + id);
 
-   return { fetchCoins, fetchCoinsList };
+      // dispatch(SET_COIN_INFO(response.data));
+   }, "coinInfo");
+
+   return { fetchCoins, fetchCoinsList, fetchCoinInfo };
 };
 
 export default useApi;
