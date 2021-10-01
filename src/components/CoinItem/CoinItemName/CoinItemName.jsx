@@ -2,10 +2,10 @@ import React from "react";
 
 import "./CoinItemName.scss";
 
-function CoinItemName({ image, name, symbol }) {
+function CoinItemName({ image, name, symbol, onClick }) {
    return (
       <div className="coin-item-name">
-         <div className="coin-item-name__inner">
+         <div onClick={onClick} className="coin-item-name__inner">
             <img
                className="coin-item-name__image"
                src={image}
