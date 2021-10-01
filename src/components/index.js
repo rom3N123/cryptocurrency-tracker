@@ -7,5 +7,6 @@ export { default as Logo } from "./Logo/Logo";
 export { default as Navigation } from "./Navigation/Navigation";
 export { default as SelectRows } from "./FormControl/SelectRows/SelectRows";
 export { default as SelectCategories } from "./FormControl/SelectCategories/SelectCategories";
-export { default as CoinitemPrice } from "./CoinItem/CoinItemPrice/CoinItemPrice";
+export { default as CoinitemPrice } from "./CoinItem/CoinItemPrice/CoinItemProfit";
 export { default as CoinItemName } from "./CoinItem/CoinItemName/CoinItemName";
+export { default as CoinItemProfit } from "./CoinItem/CoinItemPrice/CoinItemProfit";

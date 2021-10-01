@@ -1,11 +1,11 @@
 import React from "react";
 
-import "./CoinItemPrice.scss";
+import "./CoinItemProfit.scss";
 
 import ArrowDropUp from "@material-ui/icons/ArrowDropUp";
 import classNames from "classnames";
 
-function CoinItemPrice({ value }) {
+function CoinItemProfit({ value }) {
    const fixedValue = value.toFixed(2);
 
    const [isValuePositive, setValuePositive] = React.useState(false);
@@ -33,4 +33,4 @@ function CoinItemPrice({ value }) {
    );
 }
 
-export default CoinItemPrice;
+export default CoinItemProfit;

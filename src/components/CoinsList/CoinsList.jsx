@@ -1,13 +1,13 @@
 import React from "react";
 import { useApi } from "hooks";
+import { useSelector } from "react-redux";
+import { CoinItemName, CoinItemProfit } from "components";
 
 import "./CoinsList.scss";
-import { useSelector } from "react-redux";
-import CoinItemPrice from "components/CoinItem/CoinItemPrice/CoinItemPrice";
-import { CoinItemName } from "components";
 
 function CoinsList() {
    const { fetchCoins } = useApi();
+
    const coins = useSelector((state) => state.coins);
 
    React.useEffect(() => {
@@ -19,8 +19,6 @@ function CoinsList() {
 
       fetch();
    }, []);
-
-   const getPrice = (price) => price.toFixed(2);
 
    return (
       <div className="container">
@@ -60,7 +58,7 @@ function CoinsList() {
                      </td>
 
                      <td className="coins-table__coin-item-percentage">
-                        <CoinItemPrice
+                        <CoinItemProfit
                            value={coin.price_change_percentage_24h}
                         />
                      </td>
