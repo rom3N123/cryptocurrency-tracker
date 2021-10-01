@@ -1,4 +1,11 @@
+@use "/src/styles/variables/colors" as colors;
+
 .search-params {
    &__options-row {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border-bottom: 1px solid colors.$primary-light;
+      padding-bottom: 15px;
    }
 }
