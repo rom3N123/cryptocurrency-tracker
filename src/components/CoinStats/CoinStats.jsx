@@ -7,6 +7,10 @@ import "./CoinStats.scss";
 function CoinStats() {
    const coin = useSelector((state) => state.coinDetailPage.info);
 
+   if (!coin) {
+      return null;
+   }
+
    return (
       <div className="coin-stats">
          {coin.market_cap_rank && (

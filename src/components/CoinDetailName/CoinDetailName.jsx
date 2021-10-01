@@ -7,6 +7,10 @@ import "./CoinDetailName.scss";
 function CoinDetailName({ className = "" }) {
    const coin = useSelector((state) => state.coinDetailPage.info);
 
+   if (!coin) {
+      return null;
+   }
+
    return (
       <div className={`coin-market-info ${className}`}>
          <img

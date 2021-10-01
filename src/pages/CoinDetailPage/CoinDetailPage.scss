@@ -1,21 +1,30 @@
 .coin-detail-page {
    &__coin-info {
-   }
-
-   &__short-overview {
-      display: flex;
-      flex-direction: column;
-   }
-
-   &__coin-info-top,
-   &__coin-info-bottom {
       display: flex;
       justify-content: space-between;
    }
 
-   &__coin-info-top {
+   &__coin-symbol {
+      text-transform: uppercase;
+      font-weight: 400;
    }
 
-   &__coin-info-bottom {
+   &__coin-label {
+      margin-bottom: 10px;
+   }
+
+   &__price-overview-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   &__overview-profit {
+      align-self: flex-end;
+   }
+
+   &__overview-current-price {
+      font-weight: 700;
+      font-size: 32px;
    }
 }

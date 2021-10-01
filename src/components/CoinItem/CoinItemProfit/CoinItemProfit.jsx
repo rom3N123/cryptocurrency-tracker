@@ -5,12 +5,12 @@ import "./CoinItemProfit.scss";
 import ArrowDropUp from "@material-ui/icons/ArrowDropUp";
 import classNames from "classnames";
 
-function CoinItemProfit({ value }) {
+function CoinItemProfit({ value, className = "" }) {
    let fixedValue = value && value.toFixed(2);
 
    return (
       <p
-         className={classNames("coin-item-price", {
+         className={classNames("coin-item-price", className, {
             negative: value && value < 0,
             positive: value && value > 0,
          })}
