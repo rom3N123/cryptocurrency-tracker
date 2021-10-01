@@ -12,3 +12,4 @@ export { default as CoinItemName } from "./CoinItem/CoinItemName/CoinItemName";
 export { default as CoinItemProfit } from "./CoinItem/CoinItemProfit/CoinItemProfit";
 export { default as Pagination } from "./Pagination/Pagination";
 export { default as CoinMarketInfo } from "./CoinMarketInfo/CoinMarketInfo";
+export { default as SkeletonCoinsList } from "./Skeleton/SkeletonCoinsList/SkeletonCoinsList";

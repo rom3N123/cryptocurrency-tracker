@@ -1,10 +1,10 @@
 import React from "react";
 import { useApi, useQuery } from "hooks";
 import { useSelector } from "react-redux";
-import { CoinItemName, CoinItemProfit } from "components";
+import { CoinItemName, CoinItemProfit, SkeletonCoinsList } from "components";
+import { useHistory } from "react-router";
 
 import "./CoinsList.scss";
-import { useHistory } from "react-router";
 
 function CoinsList() {
    let query = useQuery();
@@ -51,7 +51,8 @@ function CoinsList() {
                </th>
             </tr>
 
-            {state.coins.items &&
+            <SkeletonCoinsList />
+            {/* {state.coins.items &&
                state.coins.items.map((coin) => (
                   <tr className="coins-table__coin-item">
                      <td className="market-place">{coin.market_cap_rank}</td>
@@ -79,7 +80,7 @@ function CoinsList() {
                         />
                      </td>
                   </tr>
-               ))}
+               ))} */}
          </table>
       </div>
    );
