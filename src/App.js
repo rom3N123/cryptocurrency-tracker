@@ -1,4 +1,4 @@
-import { Home } from "pages";
+import { CoinDetailPage, Home } from "pages";
 import { Route, Switch } from "react-router";
 
 function App() {
@@ -6,6 +6,8 @@ function App() {
       <div>
          <Switch>
             <Route exact path="/" component={Home} />
+
+            <Route path="/currencies/:id" component={CoinDetailPage} />
          </Switch>
       </div>
    );

@@ -1,0 +1,7 @@
+@use "/src/styles/variables/colors" as colors;
+
+.information-box {
+   border-radius: 6px;
+   background-color: colors.$primary-dark;
+   color: colors.$grey;
+}
