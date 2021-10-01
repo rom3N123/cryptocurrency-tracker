@@ -1,9 +1,11 @@
 import $api from "http/axios";
-import { useAsync } from "hooks";
+import { useAsync, useQuery } from "hooks";
 import { useDispatch, useSelector } from "react-redux";
 import { SET_COINS, SET_TOTAL } from "redux/slices/coins";
 
 const useApi = () => {
+   let query = useQuery();
+
    const dispatch = useDispatch();
 
    const searchParams = useSelector((state) => state.searchParams);
@@ -13,8 +15,14 @@ const useApi = () => {
 
       for (let [key, value] of Object.entries(searchParams)) {
          if (value) {
-            params.push(`${key}=${value}`);
+            params.push(key + "=" + value);
          }
+      }
+
+      let page = query.get("page");
+
+      if (page) {
+         params.push("page=" + page);
       }
 
       return params.join("&");

@@ -2,20 +2,23 @@ import React from "react";
 import { CoinsList, Pagination, SearchParams } from "components";
 
 import "./CoinsCatalog.scss";
+import { Fade } from "@material-ui/core";
 
 function CoinsCatalog() {
    return (
-      <div className="coins-catalog">
-         <SearchParams />
+      <Fade in={true} timeout={1000}>
+         <div className="coins-catalog">
+            <SearchParams />
 
-         <CoinsList />
+            <CoinsList />
 
-         <div className="coins-catalog__pagination-wrapper">
-            <div className="container">
-               <Pagination />
+            <div className="coins-catalog__pagination-wrapper">
+               <div className="container">
+                  <Pagination />
+               </div>
             </div>
          </div>
-      </div>
+      </Fade>
    );
 }
 

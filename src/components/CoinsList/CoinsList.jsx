@@ -16,7 +16,7 @@ function CoinsList() {
       if (!state.coins.total) {
          fetchCoinsListFromApi();
       }
-   }, [state.coins.total]);
+   }, []);
 
    React.useEffect(() => {
       const fetchCoinsFromApi = async () => await fetchCoins();
@@ -61,7 +61,7 @@ function CoinsList() {
                         <span className="coins-table__coin-price">
                            {coin.current_price
                               ? `${coin.current_price} %`
-                              : "0"}
+                              : "unknown"}
                         </span>
                      </td>
 

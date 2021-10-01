@@ -4,7 +4,6 @@ const initialState = {
    order: "market_cap_desc",
    per_page: 10,
    vs_currency: "usd",
-   page: 1,
    category: null,
 };
 
@@ -31,20 +30,10 @@ const searchParamsSlice = createSlice({
          ...state,
          category: action.payload,
       }),
-
-      SET_PAGE: (state, action) => ({
-         ...state,
-         page: action.payload,
-      }),
    },
 });
 
-export const {
-   SET_CATEGORY,
-   SET_CURRENCY,
-   SET_ORDER,
-   SET_PAGINATION_SIZE,
-   SET_PAGE,
-} = searchParamsSlice.actions;
+export const { SET_CATEGORY, SET_CURRENCY, SET_ORDER, SET_PAGINATION_SIZE } =
+   searchParamsSlice.actions;
 
 export default searchParamsSlice.reducer;
