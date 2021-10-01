@@ -3,8 +3,8 @@ import { useApi } from "hooks";
 
 import "./CoinsList.scss";
 import { useSelector } from "react-redux";
-import classNames from "classnames";
 import CoinItemPrice from "components/CoinItem/CoinItemPrice/CoinItemPrice";
+import { CoinItemName } from "components";
 
 function CoinsList() {
    const { fetchCoins } = useApi();
@@ -41,17 +41,11 @@ function CoinsList() {
                coins.items.map((coin) => (
                   <tr className="coins-table__coin-item">
                      <td>
-                        <div className="coins-table__coin-name-wrapper">
-                           <img
-                              className="coins-table__coin-image"
-                              src={coin.image}
-                              alt={"See cryptocurrency logo"}
-                           />
-                           <p className="coins-table__coin-name">{coin.name}</p>
-                           <span className="coins-table__coin-symbol">
-                              {coin.symbol}
-                           </span>
-                        </div>
+                        <CoinItemName
+                           image={coin.image}
+                           name={coin.name}
+                           symbol={coin.symbol}
+                        />
                      </td>
 
                      <td className="coins-table__coin-item-price">

@@ -59,22 +59,6 @@
       }
    }
 
-   &__coin-name-wrapper {
-      display: flex;
-      align-items: center;
-
-      .coins-table__coin-name {
-         margin: 0 10px 0 5px;
-         font-size: 18px;
-         font-weight: 500;
-         cursor: pointer;
-      }
-
-      .coins-table__coin-symbol {
-         text-transform: uppercase;
-      }
-   }
-
    &__coin-image {
       width: 24px;
       height: 24px;
