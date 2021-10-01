@@ -5,7 +5,14 @@
       display: flex;
       align-items: center;
       gap: 15px;
+
+      & > * {
+         flex: 0 0 10%;
+      }
+   }
+
+   &__row {
       border-bottom: 1px solid colors.$primary-light;
-      padding-bottom: 15px;
+      padding-bottom: 12px;
    }
 }
