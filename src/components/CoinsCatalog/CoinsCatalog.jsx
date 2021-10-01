@@ -1,5 +1,5 @@
 import React from "react";
-import { CoinsList, SearchParams } from "components";
+import { CoinsList, Pagination, SearchParams } from "components";
 
 import "./CoinsCatalog.scss";
 
@@ -9,6 +9,12 @@ function CoinsCatalog() {
          <SearchParams />
 
          <CoinsList />
+
+         <div className="coins-catalog__pagination-wrapper">
+            <div className="container">
+               <Pagination />
+            </div>
+         </div>
       </div>
    );
 }
