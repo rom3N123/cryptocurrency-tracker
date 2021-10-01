@@ -1,11 +1,13 @@
 import React from "react";
-import { useApi } from "hooks";
+import { useApi, useQuery } from "hooks";
 import { useSelector } from "react-redux";
 import { CoinItemName, CoinItemProfit } from "components";
 
 import "./CoinsList.scss";
 
 function CoinsList() {
+   let query = useQuery();
+
    const { fetchCoins, fetchCoinsList } = useApi();
 
    const state = useSelector((state) => state);
@@ -24,7 +26,7 @@ function CoinsList() {
       if (state.searchParams) {
          fetchCoinsFromApi();
       }
-   }, [state.searchParams]);
+   }, [state.searchParams, query.get("page")]);
 
    return (
       <div className="container">
