@@ -10,3 +10,4 @@ export { default as SelectCategories } from "./FormControl/SelectCategories/Sele
 export { default as CoinitemPrice } from "./CoinItem/CoinItemPrice/CoinItemProfit";
 export { default as CoinItemName } from "./CoinItem/CoinItemName/CoinItemName";
 export { default as CoinItemProfit } from "./CoinItem/CoinItemPrice/CoinItemProfit";
+export { default as Pagination } from "./Pagination/Pagination";

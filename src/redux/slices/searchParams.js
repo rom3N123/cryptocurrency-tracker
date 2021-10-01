@@ -4,6 +4,7 @@ const initialState = {
    order: "market_cap_desc",
    per_page: 10,
    vs_currency: "usd",
+   page: 1,
    category: null,
 };
 

@@ -1,7 +1,7 @@
 import $api from "http/axios";
 import { useAsync } from "hooks";
 import { useDispatch, useSelector } from "react-redux";
-import { SET_COINS } from "redux/slices/coins";
+import { SET_COINS, SET_TOTAL } from "redux/slices/coins";
 
 const useApi = () => {
    const dispatch = useDispatch();
@@ -28,7 +28,13 @@ const useApi = () => {
       dispatch(SET_COINS(response.data));
    }, "coins");
 
-   return { fetchCoins };
+   const fetchCoinsList = async () => {
+      const response = await $api.get("coins/list");
+
+      dispatch(SET_TOTAL(response.data.length));
+   };
+
+   return { fetchCoins, fetchCoinsList };
 };
 
 export default useApi;

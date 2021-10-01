@@ -6,19 +6,23 @@ import { CoinItemName, CoinItemProfit } from "components";
 import "./CoinsList.scss";
 
 function CoinsList() {
-   const { fetchCoins } = useApi();
+   const { fetchCoins, fetchCoinsList } = useApi();
 
    const state = useSelector((state) => state);
 
    React.useEffect(() => {
-      const fetch = async () => {
-         const data = await fetchCoins();
+      const fetchCoinsListFromApi = async () => await fetchCoinsList();
 
-         console.log(data);
-      };
+      if (!state.coins.total) {
+         fetchCoinsListFromApi();
+      }
+   }, [state.coins.total]);
+
+   React.useEffect(() => {
+      const fetchCoinsFromApi = async () => await fetchCoins();
 
       if (state.searchParams) {
-         fetch();
+         fetchCoinsFromApi();
       }
    }, [state.searchParams]);
 
