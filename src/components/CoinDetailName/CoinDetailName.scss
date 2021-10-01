@@ -1,0 +1,24 @@
+@use "/src/styles/variables/colors" as colors;
+
+.coin-market-info {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   &__logo {
+      width: 32px;
+      height: 32px;
+   }
+
+   &__name {
+      color: colors.$primary-main;
+      font-weight: 700;
+      font-size: 32px;
+      margin: 0 12px;
+   }
+
+   &__symbol {
+      text-transform: uppercase;
+      font-weight: 500;
+   }
+}
