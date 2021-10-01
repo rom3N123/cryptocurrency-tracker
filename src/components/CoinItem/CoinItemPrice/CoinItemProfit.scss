@@ -3,7 +3,11 @@
 .coin-item-price {
    display: flex;
    justify-content: center;
-   color: colors.$green;
+   color: colors.$orange;
+
+   &.positive {
+      color: colors.$green;
+   }
 
    &.negative {
       color: colors.$red;

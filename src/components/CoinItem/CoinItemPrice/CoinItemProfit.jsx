@@ -6,29 +6,26 @@ import ArrowDropUp from "@material-ui/icons/ArrowDropUp";
 import classNames from "classnames";
 
 function CoinItemProfit({ value }) {
-   const fixedValue = value.toFixed(2);
-
-   const [isValuePositive, setValuePositive] = React.useState(false);
-
-   React.useEffect(() => {
-      setValuePositive(value > 0 ? true : false);
-   }, [value]);
+   let fixedValue = value && value.toFixed(2);
 
    return (
       <p
          className={classNames("coin-item-price", {
-            negative: !isValuePositive,
+            negative: value && value < 0,
+            positive: value && value > 0,
          })}
       >
-         <ArrowDropUp
-            sx={{
-               fontSize: "20px",
-               transform: `${!isValuePositive ? "rotate(180deg)" : ""}`,
-               alignSelf: "flex-end",
-            }}
-         />
+         {value && (
+            <ArrowDropUp
+               sx={{
+                  fontSize: "20px",
+                  transform: `${value && value < 0 ? "rotate(180deg)" : ""}`,
+                  alignSelf: "flex-end",
+               }}
+            />
+         )}
 
-         <span>{fixedValue} %</span>
+         <span>{fixedValue ? `${fixedValue} %` : "unknown"}</span>
       </p>
    );
 }

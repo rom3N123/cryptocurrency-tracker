@@ -4,12 +4,15 @@ import {
    SET_CURRENCY,
    SET_ORDER,
    SET_PAGINATION_SIZE,
+   SET_PAGE,
 } from "redux/slices/searchParams";
 
 const useSearchParams = () => {
    const dispatch = useDispatch();
 
    const setCurrency = (currency) => dispatch(SET_CURRENCY(currency));
+
+   const setPage = (page) => dispatch(SET_PAGE(page));
 
    const setPaginationSize = (size) => dispatch(SET_PAGINATION_SIZE(size));
 
@@ -22,6 +25,7 @@ const useSearchParams = () => {
       setPaginationSize,
       setOrder,
       setCategory,
+      setPage,
    };
 };
 

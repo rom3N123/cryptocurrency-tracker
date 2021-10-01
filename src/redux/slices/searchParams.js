@@ -31,10 +31,20 @@ const searchParamsSlice = createSlice({
          ...state,
          category: action.payload,
       }),
+
+      SET_PAGE: (state, action) => ({
+         ...state,
+         page: action.payload,
+      }),
    },
 });
 
-export const { SET_CATEGORY, SET_CURRENCY, SET_ORDER, SET_PAGINATION_SIZE } =
-   searchParamsSlice.actions;
+export const {
+   SET_CATEGORY,
+   SET_CURRENCY,
+   SET_ORDER,
+   SET_PAGINATION_SIZE,
+   SET_PAGE,
+} = searchParamsSlice.actions;
 
 export default searchParamsSlice.reducer;
