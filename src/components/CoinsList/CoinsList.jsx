@@ -4,13 +4,18 @@ import { useSelector } from "react-redux";
 import { CoinItemName, CoinItemProfit } from "components";
 
 import "./CoinsList.scss";
+import { useHistory } from "react-router";
 
 function CoinsList() {
    let query = useQuery();
 
    const { fetchCoins, fetchCoinsList } = useApi();
 
+   const history = useHistory();
+
    const state = useSelector((state) => state);
+
+   const handleCoinClick = (id) => history.push("/currencies/" + id);
 
    React.useEffect(() => {
       const fetchCoinsListFromApi = async () => await fetchCoinsList();
@@ -53,6 +58,7 @@ function CoinsList() {
 
                      <td>
                         <CoinItemName
+                           onClick={() => handleCoinClick(coin.id)}
                            image={coin.image}
                            name={coin.name}
                            symbol={coin.symbol}
