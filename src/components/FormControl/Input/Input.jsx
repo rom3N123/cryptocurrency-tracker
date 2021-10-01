@@ -1,8 +1,6 @@
 import classNames from "classnames";
 import React from "react";
 
-import "./Input.scss";
-
 function Input({ value, fullWidth = false, ...props }) {
    return (
       <input
