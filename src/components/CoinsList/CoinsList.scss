@@ -42,13 +42,10 @@
 
    &__coin-item {
       transition: all 0.2s ease;
+      border-bottom: 1px solid colors.$primary-light;
 
       &:hover {
          background-color: rgba(colors.$primary-light, 0.08);
-      }
-
-      &:not(:last-child) {
-         border-bottom: 1px solid colors.$primary-light;
       }
 
       td {

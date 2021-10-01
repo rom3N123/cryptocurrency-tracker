@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
    order: "market_cap_desc",
-   paginationSize: 10,
+   per_page: 10,
    vs_currency: "usd",
    category: null,
 };

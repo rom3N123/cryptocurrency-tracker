@@ -8,7 +8,7 @@ import "./CoinsList.scss";
 function CoinsList() {
    const { fetchCoins } = useApi();
 
-   const coins = useSelector((state) => state.coins);
+   const state = useSelector((state) => state);
 
    React.useEffect(() => {
       const fetch = async () => {
@@ -17,8 +17,10 @@ function CoinsList() {
          console.log(data);
       };
 
-      fetch();
-   }, []);
+      if (state.searchParams) {
+         fetch();
+      }
+   }, [state.searchParams]);
 
    return (
       <div className="container">
@@ -38,8 +40,8 @@ function CoinsList() {
                </th>
             </tr>
 
-            {coins.items &&
-               coins.items.map((coin) => (
+            {state.coins.items &&
+               state.coins.items.map((coin) => (
                   <tr className="coins-table__coin-item">
                      <td className="market-place">{coin.market_cap_rank}</td>
 
