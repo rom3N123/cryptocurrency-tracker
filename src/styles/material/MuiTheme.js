@@ -8,6 +8,17 @@ const MuiTheme = createTheme({
          },
       },
 
+      MuiLink: {
+         styleOverrides: {
+            root: {
+               color: "#fff",
+            },
+         },
+         defaultProps: {
+            underline: "hover",
+         },
+      },
+
       MuiSvgIcon: {
          styleOverrides: {
             root: {
