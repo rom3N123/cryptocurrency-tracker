@@ -19,3 +19,4 @@ export { default as CoinDetailPageHeader } from "./CoinDetailPageHeader/CoinDeta
 export { default as CoinSocials } from "./CoinSocials/CoinSocials";
 export { default as RoundedButton } from "./Buttons/RoundedButton/RoundedButton";
 export { default as HoverMenu } from "./Menus/HoverMenu/HoverMenu";
+export { default as CoinMarketOverview } from "./CoinMarketOverview/CoinMarketOverview";
