@@ -21,3 +21,4 @@ export { default as RoundedButton } from "./Buttons/RoundedButton/RoundedButton"
 export { default as HoverMenu } from "./Menus/HoverMenu/HoverMenu";
 export { default as CoinMarketOverview } from "./CoinMarketOverview/CoinMarketOverview";
 export { default as StatsBlock } from "./StatsBlock/StatsBlock";
+export { default as CoinPriceChart } from "./Charts/CoinPriceChart/CoinPriceChart";
