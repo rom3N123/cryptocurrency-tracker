@@ -1,5 +1,5 @@
 import React from "react";
-import { StatsBlock } from "components";
+import { CoinItemProfit, StatsBlock } from "components";
 import { useSelector } from "react-redux";
 
 import "./CoinMarketOverview.scss";
@@ -14,25 +14,26 @@ function CoinMarketOverview({ className = "" }) {
          <div className="coin-market-overview__inner">
             <StatsBlock statName="Market cap">
                <div className="coin-market-overview__price">
-                  ${coinMarketData.market_cap.usd}
+                  <span>${coinMarketData.market_cap.usd}</span>
+                  <CoinItemProfit value={coinMarketData.price_change_24h} />
                </div>
             </StatsBlock>
 
-            <StatsBlock statName="Market cap">
+            <StatsBlock statName="Total volume">
                <div className="coin-market-overview__price">
-                  ${coinMarketData.market_cap.usd}
+                  ${coinMarketData.total_volume.usd}
                </div>
             </StatsBlock>
 
-            <StatsBlock statName="Market cap">
+            <StatsBlock statName="Height 24h">
                <div className="coin-market-overview__price">
-                  ${coinMarketData.market_cap.usd}
+                  ${coinMarketData.high_24h.usd}
                </div>
             </StatsBlock>
 
-            <StatsBlock statName="Market cap">
+            <StatsBlock statName="Low 24h">
                <div className="coin-market-overview__price">
-                  ${coinMarketData.market_cap.usd}
+                  ${coinMarketData.low_24h.usd}
                </div>
             </StatsBlock>
          </div>

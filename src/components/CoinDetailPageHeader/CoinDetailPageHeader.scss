@@ -5,6 +5,10 @@
       flex: 1 1 40%;
    }
 
+   &__price {
+      align-self: flex-start;
+   }
+
    &__market-overview {
       flex: 1 1 60%;
    }
@@ -24,10 +28,6 @@
       font-weight: 400;
    }
 
-   &__coin-label {
-      margin-bottom: 10px;
-   }
-
    &__profit-overview-section {
       display: flex;
       justify-content: space-between;
@@ -43,8 +43,14 @@
       font-size: 32px;
    }
 
-   &__overview-market {
-      border-top: 1px solid #000;
+   &__market-overview {
+      display: flex;
+      flex-direction: column;
+
+      .coin-market-overview {
+         margin-top: 10px;
+      }
+
       .stats-block {
          flex: 0 0 25%;
       }

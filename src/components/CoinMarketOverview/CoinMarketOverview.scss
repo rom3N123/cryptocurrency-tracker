@@ -1,15 +1,25 @@
 .coin-market-overview {
+   border-top: 1px solid #eff2f5;
    &__inner {
       display: flex;
       gap: 10px;
       justify-content: space-between;
+      padding-top: 20px;
+
+      & > * {
+         padding: 20px 10px 10px 15px;
+      }
+
+      & > *:not(:last-child) {
+         border-right: 1px solid #eff2f5;
+      }
    }
 
    &__price {
       font-size: 14px;
       color: #000;
       font-weight: 600;
-      margin: 4px 0 8px;
+      margin: 6px 0 8px;
 
       @media (max-width: 768px) {
          font-size: 16px;
