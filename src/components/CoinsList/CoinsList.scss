@@ -54,9 +54,12 @@
       }
    }
 
-   &__coin-item-price,
-   &__coin-item-percentage {
+   &__coin-item-price {
       text-align: center;
+   }
+
+   &__coin-item-percentage > * {
+      justify-content: center;
    }
 
    &__coin-price {
