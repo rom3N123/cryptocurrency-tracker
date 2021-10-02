@@ -1,5 +1,10 @@
 import React from "react";
-import { CoinDetailName, CoinItemProfit, CoinStats } from "components";
+import {
+   CoinDetailName,
+   CoinItemProfit,
+   CoinSocials,
+   CoinStats,
+} from "components";
 import { useSelector } from "react-redux";
 
 import "./CoinDetailPageHeader.scss";
@@ -36,6 +41,8 @@ function CoinDetailPageHeader({ className = "" }) {
                   </div>
                </div>
             </div>
+
+            <CoinSocials />
          </div>
       </header>
    );
