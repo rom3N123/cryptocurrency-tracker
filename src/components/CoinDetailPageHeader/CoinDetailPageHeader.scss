@@ -2,7 +2,11 @@
    &__data-overview {
       display: flex;
       flex-direction: column;
-      flex: 0 0 50%;
+      flex: 1 1 40%;
+   }
+
+   &__market-overview {
+      flex: 1 1 60%;
    }
 
    &__coin-data {
@@ -12,6 +16,7 @@
    &__coin-info {
       display: flex;
       justify-content: space-between;
+      gap: 50px;
    }
 
    &__coin-symbol {
@@ -36,5 +41,12 @@
    &__overview-current-price {
       font-weight: 700;
       font-size: 32px;
+   }
+
+   &__overview-market {
+      border-top: 1px solid #000;
+      .stats-block {
+         flex: 0 0 25%;
+      }
    }
 }

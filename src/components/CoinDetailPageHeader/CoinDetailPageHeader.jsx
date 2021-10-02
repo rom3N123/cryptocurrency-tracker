@@ -47,7 +47,7 @@ function CoinDetailPageHeader({ className = "" }) {
                      </div>
                   </div>
 
-                  <CoinMarketOverview />
+                  <CoinMarketOverview className="coin-detail-page-header__overview-market" />
                </div>
             </div>
          </div>

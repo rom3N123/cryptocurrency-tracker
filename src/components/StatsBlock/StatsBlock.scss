@@ -1,0 +1,11 @@
+.stats-block {
+   &__name {
+      font-size: 14px;
+      color: #58667e;
+      font-weight: 500;
+
+      @media (max-width: 768px) {
+         font-size: 17px;
+      }
+   }
+}
