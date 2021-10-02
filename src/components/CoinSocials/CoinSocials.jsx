@@ -7,10 +7,18 @@ import OpenInNew from "@material-ui/icons/OpenInNew";
 import Home from "@material-ui/icons/Home";
 import KeyboardArrowDown from "@material-ui/icons/KeyboardArrowDown";
 import Person from "@material-ui/icons/Person";
+import Code from "@material-ui/icons/Code";
 
-import "./CoinSocials.scss";
 import { getDomain } from "helpers";
 import { MenuItem, Typography } from "@material-ui/core";
+import styled from "@material-ui/styled-engine";
+
+import "./CoinSocials.scss";
+
+const OpenInNewIcon = styled(OpenInNew)(() => ({
+   color: "rgba(255,255,255, .8)",
+   fontSize: "18px !important",
+}));
 
 function CoinSocials() {
    const coin = useSelector((state) => state.coinDetailPage.info);
@@ -75,18 +83,16 @@ function CoinSocials() {
       }
    }, [coin]);
 
-   console.log(communityLinks);
-
    return (
       <div className="coin-socials">
          <RoundedButton
             component="a"
             target="blank"
             href={coin.links.homepage[0]}
-            endIcon={<OpenInNew sx={{ color: "rgba(255,255,255, 0.9)" }} />}
+            endIcon={<OpenInNewIcon />}
             startIcon={<Home />}
          >
-            bitcoin.org
+            {getDomain(coin.links.homepage[0])}
          </RoundedButton>
 
          <HoverMenu
@@ -98,6 +104,16 @@ function CoinSocials() {
             }}
             menuItems={communityLinks}
          />
+
+         <RoundedButton
+            component="a"
+            target="blank"
+            href={coin.links.repos_url.github[0]}
+            endIcon={<OpenInNewIcon />}
+            startIcon={<Code />}
+         >
+            Source code
+         </RoundedButton>
       </div>
    );
 }
