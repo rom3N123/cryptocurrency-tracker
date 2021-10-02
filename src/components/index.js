@@ -16,3 +16,6 @@ export { default as SkeletonCoinsList } from "./Skeleton/SkeletonCoinsList/Skele
 export { default as InformationBox } from "./InformationBox/InformationBox";
 export { default as CoinStats } from "./CoinStats/CoinStats";
 export { default as CoinDetailPageHeader } from "./CoinDetailPageHeader/CoinDetailPageHeader";
+export { default as CoinSocials } from "./CoinSocials/CoinSocials";
+export { default as RoundedButton } from "./Buttons/RoundedButton/RoundedButton";
+export { default as HoverMenu } from "./Menus/HoverMenu/HoverMenu";
