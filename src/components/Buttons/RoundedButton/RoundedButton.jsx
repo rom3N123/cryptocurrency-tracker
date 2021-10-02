@@ -9,10 +9,6 @@ const RoundedBtn = styled(Button)(({ theme }) => ({
    color: "#fff",
    padding: "4px 8px",
 
-   ".MuiSvgIcon-root": {
-      fontSize: "16px",
-   },
-
    "&:hover": {
       backgroundColor: theme.palette.primary.main,
    },
