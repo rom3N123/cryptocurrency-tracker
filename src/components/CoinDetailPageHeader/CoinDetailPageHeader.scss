@@ -1,4 +1,14 @@
 .coin-detail-page-header {
+   &__data-overview {
+      display: flex;
+      flex-direction: column;
+      flex: 0 0 50%;
+   }
+
+   &__coin-data {
+      align-self: flex-start;
+   }
+
    &__coin-info {
       display: flex;
       justify-content: space-between;

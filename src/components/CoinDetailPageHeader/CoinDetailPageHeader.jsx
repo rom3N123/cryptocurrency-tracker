@@ -17,8 +17,12 @@ function CoinDetailPageHeader({ className = "" }) {
          <div className="container">
             <div className="coin-detail-page-header__coin-info">
                <div className="coin-detail-page-header__data-overview">
-                  <CoinDetailName />
-                  <CoinStats />
+                  <div className="coin-detail-page-header__coin-data">
+                     <CoinDetailName />
+                     <CoinStats />
+                  </div>
+
+                  <CoinSocials />
                </div>
 
                <div className="coin-detail-page-header__price-overview">
@@ -41,8 +45,6 @@ function CoinDetailPageHeader({ className = "" }) {
                   </div>
                </div>
             </div>
-
-            <CoinSocials />
          </div>
       </header>
    );
