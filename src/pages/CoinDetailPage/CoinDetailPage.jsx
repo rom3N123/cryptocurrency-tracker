@@ -1,13 +1,13 @@
 import React from "react";
 import { useApi } from "hooks";
 import { useParams } from "react-router";
-import { CoinDetailPageHeader } from "components";
+import { CoinDetailPageHeader, CoinPriceChart } from "components";
 import { useSelector } from "react-redux";
 
 import "./CoinDetailPage.scss";
 
 function CointDetailPage() {
-   const { fetchCoinInfo } = useApi();
+   const { fetchCoinInfo, fetchCoinMarketData } = useApi();
 
    const { id } = useParams();
 
@@ -15,6 +15,7 @@ function CointDetailPage() {
 
    React.useEffect(() => {
       fetchCoinInfo(id);
+      fetchCoinMarketData(id);
    }, [id]);
 
    if (!coin.info) {
@@ -24,6 +25,8 @@ function CointDetailPage() {
    return (
       <section className="coin-detail-page">
          <CoinDetailPageHeader />
+
+         <CoinPriceChart />
       </section>
    );
 }
