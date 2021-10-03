@@ -21,7 +21,7 @@ function CoinStats() {
             <InformationBox text={coin.hashing_algorithm} />
          )}
 
-         {coin.categories.length && (
+         {!!coin.categories.length && (
             <InformationBox text={coin.categories[0]} />
          )}
       </div>
