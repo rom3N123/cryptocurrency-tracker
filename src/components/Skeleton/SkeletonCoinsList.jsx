@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Skeleton } from "@material-ui/core";
 import { useSelector } from "react-redux";
 
-import "../../CoinsList/CoinsList.scss";
+import "../CoinsList/CoinsList.scss";
 
 function SkeletonCoinsList() {
    const searchParams = useSelector((state) => state.searchParams);
