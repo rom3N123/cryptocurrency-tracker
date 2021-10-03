@@ -1,7 +1,7 @@
 import React from "react";
 import { useApi } from "hooks";
 import { useParams } from "react-router";
-import { CoinDetailPageHeader, CoinPriceChart } from "components";
+import { CoinDetailPageHeader, CoinChart } from "components";
 import { useSelector } from "react-redux";
 
 import "./CoinDetailPage.scss";
@@ -31,7 +31,7 @@ function CointDetailPage() {
                <h3 className="coin-detial-page__chart-label">
                   {coin.info.name} to USD Chart
                </h3>
-               <CoinPriceChart />
+               <CoinChart />
             </div>
          </div>
       </section>
