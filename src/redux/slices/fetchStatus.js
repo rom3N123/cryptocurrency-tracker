@@ -2,6 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
    coins: false,
+   coinMarketData: true,
+   coinInfo: true,
 };
 
 const fetchStatusSlice = createSlice({
