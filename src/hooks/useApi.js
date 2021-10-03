@@ -14,28 +14,14 @@ const useApi = () => {
 
    const searchParams = useSelector((state) => state.searchParams);
 
-   const buildGetParams = () => {
-      let params = [];
-
-      for (let [key, value] of Object.entries(searchParams)) {
-         if (value) {
-            params.push(key + "=" + value);
-         }
-      }
-
-      let page = query.get("page");
-
-      if (page) {
-         params.push("page=" + page);
-      }
-
-      return params.join("&");
-   };
-
    const fetchCoins = useAsync(async () => {
-      let getParams = buildGetParams();
-
-      const response = await $api.get("coins/markets?" + getParams);
+      const response = await $api.get("coins/markets", {
+         params: {
+            ...searchParams.coinsList,
+            ...searchParams.general,
+            page: query.get("page"),
+         },
+      });
 
       dispatch(SET_COINS(response.data));
    }, "coins");
@@ -53,9 +39,12 @@ const useApi = () => {
    }, "coinInfo");
 
    const fetchCoinMarketData = useAsync(async (id) => {
-      const response = await $api.get(
-         "coins/" + id + "/market_chart?days=1&vs_currency=usd"
-      );
+      const response = await $api.get("coins/" + id + "/market_chart", {
+         params: {
+            ...searchParams.chart,
+            ...searchParams.general,
+         },
+      });
 
       dispatch(SET_COIN_MARKET_DATA(response.data));
    }, "coinInfo");
