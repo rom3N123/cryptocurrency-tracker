@@ -1,4 +1,4 @@
-const options = {
+const defaultOptions = {
    plugins: {
       legend: {
          display: false,
@@ -13,4 +13,4 @@ const options = {
    },
 };
 
-export default options;
+export default defaultOptions;
