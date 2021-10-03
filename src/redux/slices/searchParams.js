@@ -1,7 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-   coinsSearch: { order: "market_cap_desc", per_page: 10 },
+   coinsSearch: {
+      order: "market_cap_desc",
+      per_page: 10,
+   },
 
    general: {
       vs_currency: "usd",
