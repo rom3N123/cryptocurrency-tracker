@@ -1,12 +1,12 @@
-import { defaultOptions, defaultDatasets } from "charts";
+import { defaultOptions, defaultDatasetsStyles } from "charts";
 
 const useChart = () => {
-   const getData = (labels, data) => ({
+   const getData = (labels, datasets) => ({
       labels,
-      defaultDatasets: {
-         ...defaultDatasets,
+      datasets: datasets.map((data) => ({
+         ...defaultDatasetsStyles,
          data,
-      },
+      })),
    });
 
    const getOptions = () => defaultOptions;
