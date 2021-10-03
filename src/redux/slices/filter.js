@@ -1,17 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-   marketPlace: "desc",
+   market_cap_rank: "desc",
    name: null,
-   price: null,
-   profit: null,
+   current_price: null,
+   high_24h: null,
 };
 
 const clearedFilters = {
-   marketPlace: null,
+   market_cap_rank: null,
    name: null,
-   price: null,
-   profit: null,
+   current_price: null,
+   high_24h: null,
 };
 
 const filterSlice = createSlice({

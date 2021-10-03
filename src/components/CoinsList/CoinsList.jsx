@@ -3,6 +3,8 @@ import { useApi, useCoinItem, useFilter, useQuery } from "hooks";
 import { useSelector } from "react-redux";
 import { CoinItemName, CoinItemProfit, SkeletonCoinsList } from "components";
 
+import ArrowDropUp from "@material-ui/icons/ArrowDropUp";
+
 import "./CoinsList.scss";
 
 function CoinsList() {
@@ -34,7 +36,7 @@ function CoinsList() {
    const tableMainCells = [
       {
          name: "#",
-         filterName: "marketData",
+         filterName: "market_cap_rank",
          className: "market-place",
       },
       {
@@ -44,11 +46,11 @@ function CoinsList() {
       },
       {
          name: "Price",
-         filterName: "price",
+         filterName: "current_price",
       },
       {
          name: "24h %",
-         filterName: "profit",
+         filterName: "high_24h",
       },
    ];
 
@@ -60,9 +62,26 @@ function CoinsList() {
                   <th
                      onClick={() => setFilter(cell.filterName)}
                      key={cell.name}
-                     className={`coins-table__title ${cell.className ?? ""}`}
+                     className={`coins-table__main ${cell.className ?? ""}`}
                   >
-                     {cell.name}
+                     <span className="coins-table__main-name">
+                        {state.filter[cell.filterName] && (
+                           <ArrowDropUp
+                              sx={{
+                                 position: "absolute",
+                                 bottom: "-5px",
+                                 left: "-12px",
+                                 fontSize: "22px",
+                                 transform: `${
+                                    state.filter[cell.filterName] === "asc" &&
+                                    "rotate(180deg)"
+                                 }`,
+                              }}
+                           />
+                        )}
+
+                        {cell.name}
+                     </span>
                   </th>
                ))}
             </tr>

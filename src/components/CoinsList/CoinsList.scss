@@ -35,9 +35,14 @@
       }
    }
 
-   &__title {
+   &__main {
       color: colors.$primary-main;
+   }
+
+   &__main-name {
+      position: relative;
       cursor: pointer;
+      padding-left: 10px;
    }
 
    &__coin-item {
