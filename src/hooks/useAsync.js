@@ -1,16 +1,15 @@
 import { useDispatch } from "react-redux";
-import { CHANGE_FETCH_STATUS } from "redux/slices/fetchStatus";
+import { SET_FETCH, UNSET_FETCH } from "redux/slices/fetchStatus";
 
 const useAsync = (cbfunc, fetchStatusName) => {
    const dispatch = useDispatch();
 
    return async (...rest) => {
-      console.log(rest);
-      dispatch(CHANGE_FETCH_STATUS(fetchStatusName));
+      dispatch(SET_FETCH(fetchStatusName));
 
       const result = await cbfunc(...rest);
 
-      dispatch(CHANGE_FETCH_STATUS(fetchStatusName));
+      dispatch(UNSET_FETCH(fetchStatusName));
 
       return result;
    };

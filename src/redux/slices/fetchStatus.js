@@ -10,13 +10,18 @@ const fetchStatusSlice = createSlice({
    name: "FETCH_STATUS",
    initialState,
    reducers: {
-      CHANGE_FETCH_STATUS: (state, action) => ({
+      SET_FETCH: (state, action) => ({
          ...state,
-         [action.payload]: !state[action.payload],
+         [action.payload]: true,
+      }),
+
+      UNSET_FETCH: (state, action) => ({
+         ...state,
+         [action.payload]: false,
       }),
    },
 });
 
-export const { CHANGE_FETCH_STATUS } = fetchStatusSlice.actions;
+export const { SET_FETCH, UNSET_FETCH } = fetchStatusSlice.actions;
 
 export default fetchStatusSlice.reducer;
