@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Logo, Navigation } from "components";
+import { Logo } from "components";
 
 import "./Header.scss";
 
@@ -10,8 +10,6 @@ function Header() {
          <div className="container">
             <div className="header__inner">
                <Logo />
-
-               <Navigation />
             </div>
          </div>
       </header>

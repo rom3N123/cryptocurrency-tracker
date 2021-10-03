@@ -4,7 +4,6 @@ export { default as SearchParams } from "./SearchParams/SearchParams";
 export { default as CoinsCatalog } from "./CoinsCatalog/CoinsCatalog";
 export { default as SearchButton } from "./Buttons/SearchButton/SearchButton";
 export { default as Logo } from "./Logo/Logo";
-export { default as Navigation } from "./Navigation/Navigation";
 export { default as SelectRows } from "./FormControl/SelectRows/SelectRows";
 export { default as SelectCategories } from "./FormControl/SelectCategories/SelectCategories";
 export { default as CoinItemPrice } from "./CoinItem/CoinItemProfit/CoinItemProfit";
