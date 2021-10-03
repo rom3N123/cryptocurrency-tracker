@@ -47,7 +47,7 @@ const useApi = () => {
       });
 
       dispatch(SET_COIN_MARKET_DATA(response.data));
-   }, "coinInfo");
+   }, "coinMarketData");
 
    return { fetchCoins, fetchCoinsList, fetchCoinInfo, fetchCoinMarketData };
 };
