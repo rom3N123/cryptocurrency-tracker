@@ -1,7 +1,12 @@
 import React from "react";
 import { useApi } from "hooks";
 import { useParams } from "react-router";
-import { CoinDetailPageHeader, CoinChart, ChartFilters } from "components";
+import {
+   CoinDetailPageHeader,
+   CoinChart,
+   ChartFilters,
+   SkeletonCoinDetailPage,
+} from "components";
 import { useSelector } from "react-redux";
 
 import "./CoinDetailPage.scss";
@@ -26,19 +31,25 @@ function CointDetailPage() {
    }
 
    return (
-      <section className="coin-detail-page">
-         <CoinDetailPageHeader />
+      <>
+         {state.fetchStatus.coinInfo && state.fetchStatus.coinMarketData ? (
+            <SkeletonCoinDetailPage />
+         ) : (
+            <section className="coin-detail-page">
+               <CoinDetailPageHeader />
 
-         <div className="coin-detail-page__charts">
-            <div className="container">
-               <h3 className="coin-detial-page__chart-label">
-                  {state.coinDetailPage.info.name} to USD Chart
-               </h3>
-               <ChartFilters />
-               <CoinChart />
-            </div>
-         </div>
-      </section>
+               <div className="coin-detail-page__charts">
+                  <div className="container">
+                     <h3 className="coin-detial-page__chart-label">
+                        {state.coinDetailPage.info.name} to USD Chart
+                     </h3>
+                     <ChartFilters />
+                     <CoinChart />
+                  </div>
+               </div>
+            </section>
+         )}
+      </>
    );
 }
 

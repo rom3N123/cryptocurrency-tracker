@@ -6,6 +6,7 @@ import {
    SET_COIN_INFO,
    SET_COIN_MARKET_DATA,
 } from "redux/slices/coinDetailPage";
+import { CHANGE_FETCH_STATUS } from "redux/slices/fetchStatus";
 
 const useApi = () => {
    let query = useQuery();
@@ -32,13 +33,15 @@ const useApi = () => {
       dispatch(SET_TOTAL(response.data.length));
    };
 
-   const fetchCoinInfo = useAsync(async (id) => {
+   const fetchCoinInfo = async (id) => {
       const response = await $api.get("coins/" + id);
 
       dispatch(SET_COIN_INFO(response.data));
-   }, "coinInfo");
 
-   const fetchCoinMarketData = useAsync(async (id) => {
+      dispatch(CHANGE_FETCH_STATUS("coinInfo"));
+   };
+
+   const fetchCoinMarketData = async (id) => {
       const response = await $api.get("coins/" + id + "/market_chart", {
          params: {
             ...searchParams.chart,
@@ -47,7 +50,9 @@ const useApi = () => {
       });
 
       dispatch(SET_COIN_MARKET_DATA(response.data));
-   }, "coinMarketData");
+
+      dispatch(CHANGE_FETCH_STATUS("coinMarketData"));
+   };
 
    return { fetchCoins, fetchCoinsList, fetchCoinInfo, fetchCoinMarketData };
 };
