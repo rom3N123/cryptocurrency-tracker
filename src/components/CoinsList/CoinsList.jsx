@@ -1,21 +1,18 @@
 import React from "react";
-import { useApi, useQuery } from "hooks";
+import { useApi, useCoinItem, useQuery } from "hooks";
 import { useSelector } from "react-redux";
 import { CoinItemName, CoinItemProfit, SkeletonCoinsList } from "components";
-import { useHistory } from "react-router";
 
 import "./CoinsList.scss";
 
 function CoinsList() {
-   let query = useQuery();
+   const query = useQuery();
 
    const { fetchCoins, fetchCoinsList } = useApi();
 
-   const history = useHistory();
+   const { handleCoinItemClick } = useCoinItem();
 
    const state = useSelector((state) => state);
-
-   const handleCoinClick = (id) => history.push("/currencies/" + id);
 
    React.useEffect(() => {
       const fetchCoinsListFromApi = async () => await fetchCoinsList();
@@ -61,7 +58,7 @@ function CoinsList() {
 
                      <td>
                         <CoinItemName
-                           onClick={() => handleCoinClick(coin.id)}
+                           onClick={() => handleCoinItemClick(coin.id)}
                            image={coin.image}
                            name={coin.name}
                            symbol={coin.symbol}

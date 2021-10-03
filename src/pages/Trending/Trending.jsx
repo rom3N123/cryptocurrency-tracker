@@ -6,12 +6,13 @@ import {
    ListItemIcon,
    ListItemText,
 } from "@material-ui/core";
-import { useApi } from "hooks";
+import { useApi, useCoinItem } from "hooks";
 
 import "./Trending.scss";
 
 function Trending() {
    const { fetchTrending } = useApi();
+   const { handleCoinItemClick } = useCoinItem();
 
    const [trending, setTrending] = React.useState(null);
 
@@ -35,7 +36,9 @@ function Trending() {
                <List sx={{ maxWidth: "50%", margin: "0 auto" }}>
                   {trending.map((el) => (
                      <ListItem disablePadding>
-                        <ListItemButton>
+                        <ListItemButton
+                           onClick={() => handleCoinItemClick(el.item.id)}
+                        >
                            <ListItemIcon>
                               <img src={el.item.thumb} alt="Crypto logo" />
                            </ListItemIcon>
