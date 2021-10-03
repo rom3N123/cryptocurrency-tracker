@@ -2,7 +2,7 @@ import React from "react";
 
 import "../CoinDetailPageHeader/CoinDetailPageHeader.scss";
 import "../CoinDetailName/CoinDetailName.scss";
-import { Skeleton } from "@material-ui/core";
+import { Grid, Skeleton } from "@material-ui/core";
 
 function SkeletonCoinDetailPage() {
    return (
@@ -11,48 +11,52 @@ function SkeletonCoinDetailPage() {
             <div className="container">
                <div className="coin-detail-page-header__coin-info">
                   <div className="coin-detail-page-header__data-overview">
-                     <div className="coin-detail-page-header__coin-data">
-                        <div className={`coin-market-info`}>
-                           <Skeleton
-                              variant="circular"
-                              width={32}
-                              height={32}
-                           />
-                           <Skeleton variant="text" width={40} height={15} />
-
-                           <Skeleton variant="rectangular" width="100%" />
-                        </div>
+                     <div className={`coin-market-info`}>
+                        <Skeleton variant="circular" width={40} height={40} />
+                        <Skeleton variant="text" width={200} height={30} />
+                        <Skeleton variant="text" width={40} height={30} />
                      </div>
-
-                     {/* <CoinSocials /> */}
+                     <div>
+                        <Skeleton width="100%" height={40} />
+                     </div>
+                     <Skeleton
+                        sx={{ marginTop: "20px" }}
+                        width="100%"
+                        height={40}
+                     />
                   </div>
 
                   <div className="coin-detail-page-header__market-overview">
-                     <div className="coin-detail-page-header__price">
-                        <h4 className="coin-detail-page-header__coin-label">
-                           {/* {coin.info.name} Price
-                           <span className="coin-detail-page-header__overview-coin-symbol">
-                              {` (${coin.info.symbol})`}
-                           </span> */}
-                        </h4>
-
-                        <div className="coin-detail-page-header__profit-overview-section">
-                           <div className="coin-detail-page-header__overview-current-price">
-                              {/* ${coin.info.market_data.current_price.usd} */}
-                           </div>
-                           {/* 
-                           <CoinItemProfit
-                              className="coin-detail-page-header__overview-profit"
-                              value={coin.info.market_data.price_change_24h}
-                           /> */}
-                        </div>
-                     </div>
-
-                     {/* <CoinMarketOverview /> */}
+                     <Skeleton variant="text" height={40} width={200} />
+                     <Skeleton variant="rectangular" width="100%" height={80} />
                   </div>
                </div>
             </div>
          </header>
+
+         <div>
+            <Grid sx={{ marginTop: "30px" }} className="container">
+               <Skeleton variant="text" width={150} height={40} />
+
+               <Grid
+                  sx={{ margin: "20px 0" }}
+                  container
+                  justifyContent="space-between"
+                  alignItems="center"
+               >
+                  <Skeleton variant="rectangular" width={250} height={40} />
+
+                  <Skeleton variant="rectangular" width={250} height={40} />
+               </Grid>
+
+               <Skeleton
+                  sx={{ marginTop: "30px" }}
+                  variant="rectangular"
+                  width="100%"
+                  height={400}
+               />
+            </Grid>
+         </div>
       </section>
    );
 }

@@ -11,6 +11,10 @@ function CoinChart() {
 
    const state = useSelector((state) => state);
 
+   if (!state.coinDetailPage.marketData) {
+      return null;
+   }
+
    const data = getData(
       state.coinDetailPage.marketData[state.chart.value].map((el) =>
          getDateFromTimestamp(el[0])
