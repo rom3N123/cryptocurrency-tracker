@@ -3,6 +3,12 @@ import { ToggleButton, ToggleButtonGroup } from "@material-ui/core";
 import { useChart, useSearchParams } from "hooks";
 import { useSelector } from "react-redux";
 import "./ChartFilters.scss";
+import { styled } from "@material-ui/system";
+
+const FilterButton = styled(ToggleButton)({
+   padding: "5px 10px",
+   textTransform: "none",
+});
 
 function ChartFilters() {
    const state = useSelector((state) => state);
@@ -52,25 +58,25 @@ function ChartFilters() {
       <div className="chart-filters">
          <ToggleButtonGroup value={state.chart.value}>
             {typeFilters.map((filter) => (
-               <ToggleButton
+               <FilterButton
                   onClick={() => setChartValue(filter.value)}
                   value={filter.value}
                   key={filter.name}
                >
                   {filter.name}
-               </ToggleButton>
+               </FilterButton>
             ))}
          </ToggleButtonGroup>
 
          <ToggleButtonGroup value={state.searchParams.chart.days}>
             {periodFilters.map((filter) => (
-               <ToggleButton
+               <FilterButton
                   onClick={() => setChartPeriod(filter.value)}
                   value={filter.value}
                   key={filter.name}
                >
                   {filter.name}
-               </ToggleButton>
+               </FilterButton>
             ))}
          </ToggleButtonGroup>
       </div>
