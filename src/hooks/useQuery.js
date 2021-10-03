@@ -1,4 +1,4 @@
-const { useLocation } = require("react-router-dom");
+import { useLocation } from "react-router";
 
 const useQuery = () => new URLSearchParams(useLocation().search);
 
