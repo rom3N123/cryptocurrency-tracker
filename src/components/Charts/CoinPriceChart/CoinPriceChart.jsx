@@ -1,5 +1,5 @@
-import { getDateFromTimestamp } from "helpers";
 import React from "react";
+import { getDateFromTimestamp } from "helpers";
 import { Line } from "react-chartjs-2";
 import { useSelector } from "react-redux";
 
@@ -47,7 +47,11 @@ function CoinPriceChart() {
 
    return (
       <div className="coin-price-chart">
-         <Line options={options} data={data} />
+         <Line
+            className="coin-price-chart__item"
+            options={options}
+            data={data}
+         />
       </div>
    );
 }

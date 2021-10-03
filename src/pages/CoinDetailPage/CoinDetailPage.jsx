@@ -26,7 +26,14 @@ function CointDetailPage() {
       <section className="coin-detail-page">
          <CoinDetailPageHeader />
 
-         <CoinPriceChart />
+         <div className="coin-detail-page__charts">
+            <div className="container">
+               <h3 className="coin-detial-page__chart-label">
+                  {coin.info.name} to USD Chart
+               </h3>
+               <CoinPriceChart />
+            </div>
+         </div>
       </section>
    );
 }
