@@ -17,7 +17,7 @@ const useApi = () => {
    const fetchCoins = useAsync(async () => {
       const response = await $api.get("coins/markets", {
          params: {
-            ...searchParams.coinsList,
+            ...searchParams.coinsSearch,
             ...searchParams.general,
             page: query.get("page"),
          },
