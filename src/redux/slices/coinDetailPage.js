@@ -18,10 +18,12 @@ const coinDetailPageSlice = createSlice({
          ...state,
          marketData: action.payload,
       }),
+
+      DELETE_COIN: () => initialState,
    },
 });
 
-export const { SET_COIN_INFO, SET_COIN_MARKET_DATA } =
+export const { SET_COIN_INFO, SET_COIN_MARKET_DATA, DELETE_COIN } =
    coinDetailPageSlice.actions;
 
 export default coinDetailPageSlice.reducer;
