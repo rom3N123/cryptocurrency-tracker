@@ -52,7 +52,7 @@ const useApi = () => {
    const fetchTrending = useAsync(async () => {
       const response = await $api.get("/search/trending");
 
-      return response.data;
+      return response.data.coins;
    }, "trending");
 
    return {
