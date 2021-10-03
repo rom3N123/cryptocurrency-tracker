@@ -1,10 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-   order: "market_cap_desc",
-   per_page: 10,
-   vs_currency: "usd",
-   category: null,
+   coinsList: { order: "market_cap_desc", per_page: 10 },
+   general: {
+      vs_currency: "usd",
+   },
+   coin: {},
 };
 
 const searchParamsSlice = createSlice({
@@ -13,22 +14,25 @@ const searchParamsSlice = createSlice({
    reducers: {
       SET_CURRENCY: (state, action) => ({
          ...state,
-         category: action.payload,
+         general: {
+            ...state.general,
+            vs_currency: action.payload,
+         },
       }),
 
       SET_PAGINATION_SIZE: (state, action) => ({
          ...state,
-         paginationSize: action.payload,
+         coinsList: { ...state.coinsList, per_page: action.payload },
       }),
 
       SET_ORDER: (state, action) => ({
          ...state,
-         order: action.payload,
+         coinsList: { ...state.coinsList, order: action.payload },
       }),
 
       SET_CATEGORY: (state, action) => ({
          ...state,
-         category: action.payload,
+         coinsList: { ...state.coinsList, category: action.payload },
       }),
    },
 });
