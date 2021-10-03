@@ -49,7 +49,19 @@ const useApi = () => {
       dispatch(SET_COIN_MARKET_DATA(response.data));
    }, "coinMarketData");
 
-   return { fetchCoins, fetchCoinsList, fetchCoinInfo, fetchCoinMarketData };
+   const fetchTrending = useAsync(async () => {
+      const response = await $api.get("/search/trending");
+
+      return response.data;
+   }, "trending");
+
+   return {
+      fetchCoins,
+      fetchTrending,
+      fetchCoinsList,
+      fetchCoinInfo,
+      fetchCoinMarketData,
+   };
 };
 
 export default useApi;
