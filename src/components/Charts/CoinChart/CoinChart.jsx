@@ -8,13 +8,14 @@ import "./CoinChart.scss";
 
 function CoinChart() {
    const { getData, getOptions } = useChart();
-   const coinMarketData = useSelector(
-      (state) => state.coinDetailPage.marketData
-   );
+
+   const state = useSelector((state) => state);
 
    const data = getData(
-      coinMarketData.prices.map((el) => getDateFromTimestamp(el[0])),
-      [coinMarketData.prices.map((el) => el[1])]
+      state.coinDetailPage.marketData[state.chart.value].map((el) =>
+         getDateFromTimestamp(el[0])
+      ),
+      [state.coinDetailPage.marketData[state.chart.value].map((el) => el[1])]
    );
 
    const options = getOptions();

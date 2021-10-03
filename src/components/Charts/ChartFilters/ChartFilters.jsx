@@ -2,8 +2,14 @@ import React from "react";
 import { ToggleButton, ToggleButtonGroup } from "@material-ui/core";
 
 import "./ChartFilters.scss";
+import { useChart } from "hooks";
+import { useSelector } from "react-redux";
 
 function ChartFilters() {
+   const state = useSelector((state) => state);
+
+   const { setChartValue } = useChart();
+
    const typeFilters = [
       {
          name: "Price",
@@ -44,9 +50,13 @@ function ChartFilters() {
 
    return (
       <div className="chart-filters">
-         <ToggleButtonGroup>
+         <ToggleButtonGroup value={state.chart.value}>
             {typeFilters.map((filter) => (
-               <ToggleButton value={filter.value} key={filter.name}>
+               <ToggleButton
+                  onClick={() => setChartValue(filter.value)}
+                  value={filter.value}
+                  key={filter.name}
+               >
                   {filter.name}
                </ToggleButton>
             ))}
