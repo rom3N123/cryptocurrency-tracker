@@ -7,15 +7,22 @@ const initialState = {
    profit: null,
 };
 
+const clearedFilters = {
+   marketPlace: null,
+   name: null,
+   price: null,
+   profit: null,
+};
+
 const filterSlice = createSlice({
    name: "COINS_LIST_FILTER",
    initialState,
    reducers: {
       SET_FILTER: (state, action) => ({
-         ...state,
-         [action.payload]: !state.action.payload
+         ...clearedFilters,
+         [action.payload]: !state[action.payload]
             ? "desc"
-            : state.action.payload === "desc"
+            : state[action.payload] === "desc"
             ? "asc"
             : "desc",
       }),

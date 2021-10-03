@@ -1,5 +1,5 @@
 import React from "react";
-import { useApi, useCoinItem, useQuery } from "hooks";
+import { useApi, useCoinItem, useFilter, useQuery } from "hooks";
 import { useSelector } from "react-redux";
 import { CoinItemName, CoinItemProfit, SkeletonCoinsList } from "components";
 
@@ -7,6 +7,7 @@ import "./CoinsList.scss";
 
 function CoinsList() {
    const query = useQuery();
+   const { setFilter } = useFilter();
 
    const { fetchCoins, fetchCoinsList } = useApi();
 
@@ -30,22 +31,40 @@ function CoinsList() {
       }
    }, [state.searchParams, query.get("page")]);
 
+   const tableMainCells = [
+      {
+         name: "#",
+         filterName: "marketData",
+         className: "market-place",
+      },
+      {
+         name: "Name",
+         filterName: "name",
+         className: "align-left",
+      },
+      {
+         name: "Price",
+         filterName: "price",
+      },
+      {
+         name: "24h %",
+         filterName: "profit",
+      },
+   ];
+
    return (
       <div className="container">
          <table className="coins-table">
             <tr className="coins-table__title-row">
-               <th className="market-place">
-                  <span className="coins-table__title">#</span>
-               </th>
-               <th className="align-left">
-                  <span className="coins-table__title">Name</span>
-               </th>
-               <th>
-                  <span className="coins-table__title">Price</span>
-               </th>
-               <th>
-                  <span className="coins-table__title">24h %</span>
-               </th>
+               {tableMainCells.map((cell) => (
+                  <th
+                     onClick={() => setFilter(cell.filterName)}
+                     key={cell.name}
+                     className={`coins-table__title ${cell.className ?? ""}`}
+                  >
+                     {cell.name}
+                  </th>
+               ))}
             </tr>
 
             {state.fetchStatus.coins ? (
