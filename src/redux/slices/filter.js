@@ -1,17 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-   market_cap_rank: "desc",
-   name: null,
-   current_price: null,
-   high_24h: null,
+   market_cap_rank: { value: "desc", type: "number" },
+   name: { value: null, type: "string" },
+   current_price: { value: null, type: "number" },
+   high_24h: { value: null, type: "number" },
 };
 
 const clearedFilters = {
-   market_cap_rank: null,
-   name: null,
-   current_price: null,
-   high_24h: null,
+   market_cap_rank: { value: null, type: "number" },
+   name: { value: null, type: "string" },
+   current_price: { value: null, type: "number" },
+   high_24h: { value: null, type: "number" },
 };
 
 const filterSlice = createSlice({
@@ -20,11 +20,14 @@ const filterSlice = createSlice({
    reducers: {
       SET_FILTER: (state, action) => ({
          ...clearedFilters,
-         [action.payload]: !state[action.payload]
-            ? "desc"
-            : state[action.payload] === "desc"
-            ? "asc"
-            : "desc",
+         [action.payload]: {
+            ...state[action.payload],
+            value: !state[action.payload].value
+               ? "desc"
+               : state[action.payload].value === "desc"
+               ? "asc"
+               : "desc",
+         },
       }),
    },
 });
