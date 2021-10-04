@@ -14,7 +14,7 @@ const useApi = () => {
 
    const searchParams = useSelector((state) => state.searchParams);
 
-   const fetchCoins = useAsync(async () => {
+   const fetchCoinsSilent = async () => {
       const response = await $api.get("coins/markets", {
          params: {
             ...searchParams.coinsSearch,
@@ -24,7 +24,9 @@ const useApi = () => {
       });
 
       dispatch(SET_COINS(response.data));
-   }, "coins");
+   };
+
+   const fetchCoins = useAsync(fetchCoinsSilent, "coins");
 
    const fetchCoinsList = async () => {
       const response = await $api.get("coins/list");

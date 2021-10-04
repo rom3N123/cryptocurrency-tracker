@@ -9,6 +9,7 @@ const useFilter = () => {
 
    const setFilter = (filterName) => {
       dispatch(SET_FILTER(filterName));
+      alert(state.sort[filterName]);
       dispatch(
          SORT_COINS({
             filterName,
