@@ -34,7 +34,7 @@ function CoinsList() {
 
          dispatch(SORT_COINS({ filterName: sortBy[0], sort: sortBy[1] }));
       }
-   }, [state.sort, state.coins.items]);
+   }, [state.sort]);
 
    React.useEffect(() => {
       const fetchCoinsListFromApi = async () => await fetchCoinsList();
