@@ -1,9 +1,10 @@
 import React from "react";
 
 import { Pagination as MuiPagination } from "@material-ui/core";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import { useQuery } from "hooks";
+import { DELETE_SORTED_COINS } from "redux/slices/coins";
 
 function Pagination() {
    const query = useQuery();
@@ -14,7 +15,12 @@ function Pagination() {
 
    const [pages, setPages] = React.useState(null);
 
-   const handleChange = (e, value) => history.push("/?page=" + value);
+   const dispatch = useDispatch();
+
+   const handleChange = (e, value) => {
+      dispatch(DELETE_SORTED_COINS());
+      history.push("/?page=" + value);
+   };
 
    React.useEffect(() => {
       const calculateTotalPages = () => {
