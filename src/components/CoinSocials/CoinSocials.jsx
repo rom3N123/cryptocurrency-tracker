@@ -95,15 +95,17 @@ function CoinSocials() {
             {getDomain(coin.links.homepage[0])}
          </RoundedButton>
 
-         <HoverMenu
-            Element={RoundedButton}
-            elementProps={{
-               endIcon: <KeyboardArrowDown />,
-               startIcon: <Person />,
-               children: "Community",
-            }}
-            menuItems={communityLinks}
-         />
+         {communityLinks.length > 0 && (
+            <HoverMenu
+               Element={RoundedButton}
+               elementProps={{
+                  endIcon: <KeyboardArrowDown />,
+                  startIcon: <Person />,
+                  children: "Community",
+               }}
+               menuItems={communityLinks}
+            />
+         )}
 
          <RoundedButton
             component="a"
