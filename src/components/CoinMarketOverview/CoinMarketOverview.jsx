@@ -15,7 +15,9 @@ function CoinMarketOverview({ className = "" }) {
             <StatsBlock statName="Market cap">
                <div className="coin-market-overview__price">
                   <span>${coinMarketData.market_cap.usd}</span>
-                  <CoinItemProfit value={coinMarketData.price_change_24h} />
+                  <CoinItemProfit
+                     value={coinMarketData.market_cap_change_percentage_24h}
+                  />
                </div>
             </StatsBlock>
 
