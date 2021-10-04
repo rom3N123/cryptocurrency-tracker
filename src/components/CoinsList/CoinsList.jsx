@@ -7,6 +7,7 @@ import ArrowDropUp from "@material-ui/icons/ArrowDropUp";
 
 import "./CoinsList.scss";
 import { SORT_COINS } from "redux/slices/coins";
+import { SET_FILTER } from "redux/slices/sort";
 
 function CoinsList() {
    const query = useQuery();
@@ -23,8 +24,17 @@ function CoinsList() {
       (state) => state.coins.sorted ?? state.coins.items
    );
 
-   const setFilter = (filterName) =>
-      dispatch(SORT_COINS({ filterName, sort: state.sort[filterName] }));
+   const setSort = (filterName) => dispatch(SET_FILTER(filterName));
+
+   React.useEffect(() => {
+      if (state.coins.items) {
+         const sortBy = Object.entries(state.sort).find(
+            ([key]) => state.sort[key]
+         );
+
+         dispatch(SORT_COINS({ filterName: sortBy[0], sort: sortBy[1] }));
+      }
+   }, [state.sort]);
 
    React.useEffect(() => {
       const fetchCoinsListFromApi = async () => await fetchCoinsList();
@@ -69,7 +79,7 @@ function CoinsList() {
             <tr className="coins-table__title-row">
                {tableMainCells.map((cell) => (
                   <th
-                     onClick={() => setFilter(cell.filterName)}
+                     onClick={() => setSort(cell.filterName)}
                      key={cell.name}
                      className={`coins-table__main ${cell.className ?? ""}`}
                   >
@@ -82,7 +92,7 @@ function CoinsList() {
                                  left: "-12px",
                                  fontSize: "22px",
                                  transform: `${
-                                    state.sort[cell.filterName] === "asc" &&
+                                    state.sort[cell.filterName] === "desc" &&
                                     "rotate(180deg)"
                                  }`,
                               }}

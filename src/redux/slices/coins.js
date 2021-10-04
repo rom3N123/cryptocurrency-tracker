@@ -26,19 +26,25 @@ const coinsSlice = createSlice({
 
          const sorts = {
             market_cap_rank: () =>
-               sortType === "asc" ? state.items : [...state.items].reverse(),
+               sortType === "asc"
+                  ? [...state.items].sort((a, b) => a - b)
+                  : [...state.items].sort((a, b) => a - b).reverse(),
             market_cap_change_percentage_24h: () =>
-               [...state.items].sort((a, b) =>
-                  sortType === "desc"
-                     ? a[filterName] - b[filterName]
-                     : a[filterName] + b[filterName]
-               ),
+               sortType === "desc"
+                  ? [...state.items].sort(
+                       (a, b) => a[filterName] - b[filterName]
+                    )
+                  : [...state.items]
+                       .sort((a, b) => a[filterName] - b[filterName])
+                       .reverse(),
             current_price: () =>
-               [...state.items].sort((a, b) =>
-                  sortType === "desc"
-                     ? a[filterName] - b[filterName]
-                     : a[filterName] + b[filterName]
-               ),
+               sortType === "desc"
+                  ? [...state.items].sort(
+                       (a, b) => a[filterName] - b[filterName]
+                    )
+                  : [...state.items]
+                       .sort((a, b) => a[filterName] - b[filterName])
+                       .reverse(),
             name: () =>
                [...state.items].sort((a, b) =>
                   sortType === "desc"

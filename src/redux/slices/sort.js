@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-   market_cap_rank: "desc",
+   market_cap_rank: "asc",
    name: null,
    current_price: null,
    market_cap_change_percentage_24h: null,
@@ -21,10 +21,10 @@ const sortSlice = createSlice({
       SET_FILTER: (state, action) => ({
          ...clearedFilters,
          [action.payload]: !state[action.payload]
-            ? "desc"
-            : state[action.payload] === "desc"
             ? "asc"
-            : "desc",
+            : state[action.payload] === "asc"
+            ? "desc"
+            : "asc",
       }),
    },
 });
