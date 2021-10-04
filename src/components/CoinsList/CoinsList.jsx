@@ -17,6 +17,10 @@ function CoinsList() {
 
    const state = useSelector((state) => state);
 
+   const coins = useSelector(
+      (state) => state.coins.sorted ?? state.coins.items
+   );
+
    React.useEffect(() => {
       const fetchCoinsListFromApi = async () => await fetchCoinsList();
 
@@ -50,7 +54,7 @@ function CoinsList() {
       },
       {
          name: "24h %",
-         filterName: "high_24h",
+         filterName: "market_cap_change_percentage_24h",
       },
    ];
 
@@ -65,7 +69,7 @@ function CoinsList() {
                      className={`coins-table__main ${cell.className ?? ""}`}
                   >
                      <span className="coins-table__main-name">
-                        {state.filter[cell.filterName] && (
+                        {state.sort[cell.filterName] && (
                            <ArrowDropUp
                               sx={{
                                  position: "absolute",
@@ -73,7 +77,7 @@ function CoinsList() {
                                  left: "-12px",
                                  fontSize: "22px",
                                  transform: `${
-                                    state.filter[cell.filterName] === "asc" &&
+                                    state.sort[cell.filterName] === "asc" &&
                                     "rotate(180deg)"
                                  }`,
                               }}
@@ -86,12 +90,11 @@ function CoinsList() {
                ))}
             </tr>
 
-            {state.fetchStatus.coins ? (
+            {state.fetchStatus.coins || !state.coins.items ? (
                <SkeletonCoinsList />
             ) : (
-               state.coins.items &&
-               state.coins.items.map((coin) => (
-                  <tr className="coins-table__coin-item">
+               coins.map((coin) => (
+                  <tr key={coin.id} className="coins-table__coin-item">
                      <td className="market-place">{coin.market_cap_rank}</td>
 
                      <td>

@@ -6,11 +6,11 @@ import {
    searchParams,
    coinDetailPage,
    chart,
-   filter,
+   sort,
 } from "./slices";
 
 const store = configureStore({
-   reducer: { coins, fetchStatus, searchParams, coinDetailPage, chart, filter },
+   reducer: { coins, fetchStatus, searchParams, coinDetailPage, chart, sort },
 });
 
 export default store;
