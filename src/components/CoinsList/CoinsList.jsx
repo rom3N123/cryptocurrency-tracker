@@ -1,15 +1,17 @@
 import React from "react";
-import { useApi, useCoinItem, useFilter, useQuery } from "hooks";
-import { useSelector } from "react-redux";
+import { useApi, useCoinItem, useQuery } from "hooks";
+import { useDispatch, useSelector } from "react-redux";
 import { CoinItemName, CoinItemProfit, SkeletonCoinsList } from "components";
 
 import ArrowDropUp from "@material-ui/icons/ArrowDropUp";
 
 import "./CoinsList.scss";
+import { SORT_COINS } from "redux/slices/coins";
 
 function CoinsList() {
    const query = useQuery();
-   const { setFilter } = useFilter();
+
+   const dispatch = useDispatch();
 
    const { fetchCoins, fetchCoinsList } = useApi();
 
@@ -20,6 +22,9 @@ function CoinsList() {
    const coins = useSelector(
       (state) => state.coins.sorted ?? state.coins.items
    );
+
+   const setFilter = (filterName) =>
+      dispatch(SORT_COINS({ filterName, sort: state.sort[filterName] }));
 
    React.useEffect(() => {
       const fetchCoinsListFromApi = async () => await fetchCoinsList();
